@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-size: 16px;
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 230px;
+}
+
+:root {
+    --black: #0a1f33;
+    --grey: #8a8e99;
+    --line: #dadee5;
+    --white: #fff;
+    --green: #00e9be;
+    --pink: #ff7597;
+    --yellow: #ffc700;
+    --light-grey: #f7f8fd;
+}
