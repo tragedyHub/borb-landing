@@ -46,7 +46,7 @@ const StyledWork = styled.div`
         flex-direction: column-reverse;
         img {
             margin-right: 0;
-            width: 50%;
+            width: 80%;
             margin-top: 50px;
         }
     }

@@ -37,7 +37,7 @@ const StyledOffer = styled.div`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         .offer_image {
-            width: 70%;
+            width: 100%;
             margin-top: 60px;
         }
     }

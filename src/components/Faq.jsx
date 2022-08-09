@@ -85,6 +85,9 @@ const Row = styled.div`
     @media screen and (max-width: 1000px) {
         height: 90px;
     }
+    @media screen and (max-width: 768px) {
+        height: 80px;
+    }
 `
 const Content = styled.div`
     display: ${(props) => (props.state ? 'block' : 'none')};
@@ -96,5 +99,8 @@ const Title = styled.h5`
 
     @media screen and (max-width: 1000px) {
         font-size: 23px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
     }
 `
