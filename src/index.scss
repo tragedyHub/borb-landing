@@ -20,6 +20,12 @@ input {
     padding: 0 230px;
 }
 
+@media screen and (max-width: 1500px) {
+    .container {
+        padding: 0 10vw;
+    }
+}
+
 :root {
     --black: #0a1f33;
     --grey: #8a8e99;

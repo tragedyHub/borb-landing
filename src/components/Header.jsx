@@ -24,6 +24,18 @@ export default Header
 const StyledHeader = styled.header`
     height: 40px;
     margin-top: 30px;
+
+    @media screen and (max-width: 768px) {
+        .line {
+            margin: 0 20px !important;
+        }
+        .logo img {
+            width: 20px !important;
+        }
+        h4 {
+            font-size: 26px !important;
+        }
+    }
     img {
         cursor: pointer;
     }
@@ -62,4 +74,8 @@ const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 20px;
+    }
 `

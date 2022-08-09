@@ -30,6 +30,9 @@ const StyledBanner = styled.div`
         top: 0;
         height: 100%;
     }
+    @media screen and (max-width: 1000px) {
+        margin: 100px 0;
+    }
 `
 
 const Title = styled.h3`
@@ -37,6 +40,11 @@ const Title = styled.h3`
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 35px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
 `
 
 const Button = styled.button`
@@ -47,4 +55,7 @@ const Button = styled.button`
     font-weight: 400;
     width: 188px;
     cursor: pointer;
+    @media screen and (max-width: 1000px) {
+        font-size: 16px;
+    }
 `

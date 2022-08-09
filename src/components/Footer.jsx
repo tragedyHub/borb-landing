@@ -60,6 +60,12 @@ const Grid = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 64px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 107px 92px;
+        grid-gap: 60px;
+    }
 `
 const Column = styled.div`
     display: flex;
@@ -97,7 +103,7 @@ const Bottom = styled.div`
         font-weight: 400;
         font-size: 14px;
     }
-    a { 
+    a {
         color: var(--grey);
         font-size: 14px;
         font-weight: 400;

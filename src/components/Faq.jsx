@@ -37,7 +37,7 @@ const Faq = () => {
 
     console.log(show)
 
-    console.log(data);
+    console.log(data)
 
     return (
         <StyledFaq>
@@ -82,6 +82,9 @@ const Row = styled.div`
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--grey);
+    @media screen and (max-width: 1000px) {
+        height: 90px;
+    }
 `
 const Content = styled.div`
     display: ${(props) => (props.state ? 'block' : 'none')};
@@ -90,4 +93,8 @@ const Text = styled.p``
 const Title = styled.h5`
     font-size: 28px;
     font-weight: 600;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 23px;
+    }
 `

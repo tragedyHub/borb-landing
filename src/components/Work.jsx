@@ -33,6 +33,23 @@ const StyledWork = styled.div`
     img {
         margin-right: 150px;
     }
+    @media screen and (max-width: 1500px) {
+        margin: 150px 0 100px;
+        justify-content: space-around;
+        img {
+            max-width: 546px;
+            width: 40%;
+            margin-right: 5vw;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+        img {
+            margin-right: 0;
+            width: 50%;
+            margin-top: 50px;
+        }
+    }
 `
 
 const Column = styled.div`
@@ -40,16 +57,39 @@ const Column = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 64px 64px 64px;
     grid-gap: 32px;
+    @media screen and (max-width: 1000px) {
+        grid-gap: 20px;
+    }
+    @media screen and (max-width: 768px) {
+        grid-gap: 10px;
+        justify-content: center;
+        text-align: center;
+    }
 `
 const Title = styled.h3`
     font-size: 48px;
     font-weight: 600;
     margin-bottom: 58px;
+    @media screen and (max-width: 1000px) {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
 `
 const Text = styled.p`
     margin-left: 24px;
     font-size: 28px;
     font-weight: 400;
+    @media screen and (max-width: 1000px) {
+        font-size: 22px;
+        margin-left: 16px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 17px;
+    }
 `
 const Span = styled.div`
     background: #ffffff;
@@ -62,6 +102,11 @@ const Span = styled.div`
     color: #00e9be;
     width: 64px;
     height: 64px;
+    @media screen and (max-width: 1000px) {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
 `
 const Row = styled.div`
     display: flex;

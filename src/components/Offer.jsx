@@ -15,7 +15,7 @@ const Offer = () => {
                 </Text>
                 <Button>Launch dApp</Button>
             </Column>
-            <img src="/assets/offer_bg.png" />
+            <img src="/assets/offer_bg.png" className="offer_image" />
         </StyledOffer>
     )
 }
@@ -27,19 +27,53 @@ const StyledOffer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 1500px) {
+        margin-top: 100px;
+        .offer_image {
+            width: 38vw;
+            max-width: 583px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        .offer_image {
+            width: 70%;
+            margin-top: 60px;
+        }
+    }
 `
 
-const Column = styled.div``
+const Column = styled.div`
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+`
 
 const Title = styled.h2`
     font-size: 90px;
     font-weight: 600;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 60px;
+    }
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
 `
 
 const Text = styled.p`
     margin: 20px 0 40px;
     font-size: 28px;
     font-weight: 400;
+    @media screen and (max-width: 1000px) {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        line-height: 170%;
+    }
 `
 
 const Button = styled.button`
@@ -47,15 +81,28 @@ const Button = styled.button`
     background: #00e9be;
     border-radius: 8px;
     font-size: 18px;
+    @media screen and (max-width: 1000px) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        margin: 0 auto;
+    }
 `
-
-const Image = styled.img``
 
 const Span = styled.span`
     position: relative;
     font-size: 28px;
     font-weight: 600;
     margin-left: 15px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 20px;
+        margin-left: 10px;
+        img {
+            width: 70px;
+        }
+    }
 
     img {
         top: 50%;
