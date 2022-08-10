@@ -112,6 +112,7 @@ const Button = styled.button`
     padding: 14px 40px;
     background: #00e9be;
     border-radius: 8px;
+  transition: .2s all ease;
     font-size: 18px;
     @media screen and (max-width: 1000px) {
         font-size: 16px;
@@ -119,6 +120,9 @@ const Button = styled.button`
     @media screen and (max-width: 768px) {
         text-align: center;
         margin: 0 auto;
+    }
+    &:hover, &:active {
+      color: #fff;
     }
 `
 

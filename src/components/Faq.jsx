@@ -4,31 +4,24 @@ import styled from 'styled-components'
 const data = [
     {
         name: 'What are event contracts?',
-        active: true,
     },
     {
         name: 'How does trading work?',
-        active: false,
     },
     {
         name: 'How is the market price determined?',
-        active: false,
     },
     {
         name: 'Who am I trading with?',
-        active: false,
     },
     {
         name: 'How is Kalshi regulated?',
-        active: false,
     },
     {
         name: 'How are customer deposits processed?',
-        active: false,
     },
     {
         name: 'Is this gambling?',
-        active: false,
     },
 ]
 

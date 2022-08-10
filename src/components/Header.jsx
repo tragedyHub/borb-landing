@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Header = () => {
+const Header = ({set}) => {
     return (
         <StyledHeader>
             <HeaderContainer>
@@ -10,7 +10,7 @@ const Header = () => {
                     <h4>BorB</h4>
                 </div>
                 <div className="right">
-                    <img src="/assets/lang.svg" alt="" />
+                    <img src="/assets/lang.svg" alt="" onClick={() => set(true)}/>
                     <div className="line"></div>
                     <button>Launch dApp</button>
                 </div>
@@ -66,6 +66,11 @@ const StyledHeader = styled.header`
         border-radius: 8px;
         font-weight: 400;
         cursor: pointer;
+      transition: .2s all ease;
+      &:hover, &:active { 
+        background: #00e9be;
+        color: #fff;
+      }
     }
 `
 

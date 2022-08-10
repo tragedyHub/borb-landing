@@ -55,7 +55,11 @@ const Button = styled.button`
     font-weight: 400;
     width: 170px;
     cursor: pointer;
+  transition: .2s all ease;
     @media screen and (max-width: 1000px) {
         font-size: 16px;
     }
+  &:hover, &:active {
+    color: #fff;
+  }
 `

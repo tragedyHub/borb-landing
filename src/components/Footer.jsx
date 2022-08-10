@@ -78,11 +78,17 @@ const Title = styled.h6`
 `
 const Link = styled.a`
     color: var(--grey);
+    opacity: 0.8;
     font-size: 14px;
     font-weight: 400;
+  transition: .2s all ease;
     &:nth-child(n + 2) {
         margin-top: 12px;
     }
+  
+  &:hover, &:active {
+    opacity: 1;
+  }
 `
 const Logo = styled.a`
     display: flex;
@@ -105,7 +111,11 @@ const Bottom = styled.div`
     }
     a {
         color: var(--grey);
+      opacity: 0.8;
         font-size: 14px;
         font-weight: 400;
+      &:hover, &:active {
+        opacity: 1;
+      }
     }
 `
