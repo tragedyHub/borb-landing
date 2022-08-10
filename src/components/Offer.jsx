@@ -56,7 +56,7 @@ const Offer = () => {
 export default Offer
 
 const StyledOffer = styled.div`
-    margin-top: 184px;
+    margin-top: 84px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -27,7 +27,7 @@ const Work = () => {
 export default Work
 
 const StyledWork = styled.div`
-    margin: 257px 0 200px;
+    margin: 157px 0;
     display: flex;
     align-items: center;
     img {
