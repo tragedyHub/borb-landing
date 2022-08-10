@@ -31,7 +31,8 @@ const StyledWork = styled.div`
     display: flex;
     align-items: center;
     img {
-        margin-right: 150px;
+        width: 50%;
+        margin-right: 100px;
     }
     @media screen and (max-width: 1500px) {
         margin: 150px 0 100px;
@@ -68,9 +69,8 @@ const Column = styled.div`
     }
 `
 const Title = styled.h3`
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 600;
-    margin-bottom: 58px;
     @media screen and (max-width: 1000px) {
         font-size: 36px;
         margin-bottom: 40px;
@@ -82,7 +82,7 @@ const Title = styled.h3`
 `
 const Text = styled.p`
     margin-left: 24px;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
     @media screen and (max-width: 1000px) {
         font-size: 22px;
@@ -99,10 +99,10 @@ const Span = styled.div`
     display: grid;
     place-content: center;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 24px;
     color: #00e9be;
-    width: 64px;
-    height: 64px;
+    width: 55px;
+    height: 55px;
     @media screen and (max-width: 1000px) {
         width: 48px;
         height: 48px;

@@ -47,7 +47,7 @@ const StyledHeader = styled.header`
         margin-right: 8px;
     }
     h4 {
-        font-size: 32px;
+        font-size: 26px;
         font-weight: 600;
     }
     .right {

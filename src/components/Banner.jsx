@@ -14,7 +14,7 @@ const Banner = () => {
 export default Banner
 
 const StyledBanner = styled.div`
-    margin: 160px 0 120px;
+    margin: 100px 0 80px;
     height: 380px;
     background: var(--light-grey);
     border-radius: 16px;
@@ -37,9 +37,9 @@ const StyledBanner = styled.div`
 
 const Title = styled.h3`
     color: var(--black);
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 600;
-    margin-bottom: 35px;
+    margin-bottom: 26px;
 
     @media screen and (max-width: 1000px) {
         font-size: 36px;
@@ -51,9 +51,9 @@ const Button = styled.button`
     padding: 14px 0;
     border-radius: 8px;
     background: var(--green);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
-    width: 188px;
+    width: 170px;
     cursor: pointer;
     @media screen and (max-width: 1000px) {
         font-size: 16px;

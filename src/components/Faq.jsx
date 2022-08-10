@@ -78,7 +78,7 @@ const Block = styled.div``
 const Grid = styled.div``
 const Row = styled.div`
     cursor: pointer;
-    height: 125px;
+    height: 100px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--grey);
@@ -94,7 +94,7 @@ const Content = styled.div`
 `
 const Text = styled.p``
 const Title = styled.h5`
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
 
     @media screen and (max-width: 1000px) {

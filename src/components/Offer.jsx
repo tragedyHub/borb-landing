@@ -34,7 +34,7 @@ const Offer = () => {
     return (
         <StyledOffer>
             <Column>
-                <Title>Bullishor Bearish?</Title>
+                <Title>Bullish or Bearish?</Title>
                 <Text>
                     Predict if the price will
                     <br /> go up or down & earn{' '}
@@ -83,7 +83,7 @@ const Column = styled.div`
 `
 
 const Title = styled.h2`
-    font-size: 90px;
+    font-size: 80px;
     font-weight: 600;
 
     @media screen and (max-width: 1000px) {
@@ -95,8 +95,8 @@ const Title = styled.h2`
 `
 
 const Text = styled.p`
-    margin: 20px 0 40px;
-    font-size: 28px;
+    margin: 15px 0 30px;
+    font-size: 24px;
     font-weight: 400;
     @media screen and (max-width: 1000px) {
         font-size: 20px;
@@ -124,9 +124,9 @@ const Button = styled.button`
 
 const Span = styled.span`
     position: relative;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
-    margin-left: 15px;
+    margin-left: 20px;
 
     @media screen and (max-width: 1000px) {
         font-size: 20px;
