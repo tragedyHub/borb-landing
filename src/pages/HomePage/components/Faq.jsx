@@ -41,10 +41,15 @@ const Faq = () => {
         {data.map((card) => (
           <Block key={card.id}>
             <Row
+                state={show === card.id}
               className={show === card.id ? `active` : ``}
               onClick={() => setShow(card.id)}
             >
               <Title>{card.name}</Title>
+              <Burger state={show === card.id}>
+                <div className="hor"></div>
+                <div className="ver"></div>
+              </Burger>
             </Row>
             <Content state={show === card.id}>
               <Text>
@@ -74,7 +79,9 @@ const Row = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--grey);
+  justify-content: space-between;
+  padding-right: 5px;
+  border-bottom: ${props => props.state ? "none" : "1px solid var(--grey)"};
   @media screen and (max-width: 1000px) {
     height: 90px;
   }
@@ -85,7 +92,16 @@ const Row = styled.div`
 const Content = styled.div`
   display: ${(props) => (props.state ? "block" : "none")};
 `;
-const Text = styled.p``;
+const Text = styled.p`
+  font-size: 18px;
+  line-height: 180%;
+  @media screen and (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
 const Title = styled.h5`
   font-size: 24px;
   font-weight: 600;
@@ -97,3 +113,27 @@ const Title = styled.h5`
     font-size: 18px;
   }
 `;
+
+const Burger = styled.div`
+  position: relative;
+  display: flex;
+  height: 21px;
+  width: 21px;
+  div { border-radius: 10px;}
+  .hor { 
+    width: 100%;
+    height: 3px;
+    background: var(--black);
+    margin: auto;
+  }
+  .ver {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 3px;
+    background:  var(--black);
+    display: ${props => props.state ? "none" : "block"};
+  }
+`
