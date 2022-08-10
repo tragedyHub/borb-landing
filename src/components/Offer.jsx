@@ -1,7 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
+import animationData from "../common/settings.json";
+import Lottie from "react-lottie";
 
 const Offer = () => {
+    const [width, setWidth] = React.useState("683px")
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
+    const windowHandler = () => {
+        const windowWidth = window.innerWidth
+
+        if (windowWidth <= 1500 && windowWidth > 768) {
+            setWidth("50vw")
+        } else if (windowWidth <= 768) {
+            setWidth("100%")
+        } else {
+            setWidth("683px")
+        }
+    }
+
+    React.useEffect(() => {
+        windowHandler()
+    }, [window.innerWidth])
+
     return (
         <StyledOffer>
             <Column>
@@ -15,7 +44,11 @@ const Offer = () => {
                 </Text>
                 <Button>Launch dApp</Button>
             </Column>
-            <img src="/assets/offer_bg.png" className="offer_image" />
+
+            <Lottie
+                options={defaultOptions}
+                width={width}
+            />
         </StyledOffer>
     )
 }
@@ -29,16 +62,15 @@ const StyledOffer = styled.div`
     align-items: center;
     @media screen and (max-width: 1500px) {
         margin-top: 100px;
-        .offer_image {
+        svg {
             width: 38vw;
             max-width: 583px;
         }
     }
     @media screen and (max-width: 768px) {
         flex-direction: column;
-        .offer_image {
+        svg {
             width: 100%;
-            margin-top: 60px;
         }
     }
 `

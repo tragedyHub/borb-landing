@@ -44,6 +44,7 @@ const StyledWork = styled.div`
     }
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
+        margin: 50px 0;
         img {
             margin-right: 0;
             width: 80%;
