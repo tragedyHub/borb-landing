@@ -35,15 +35,23 @@ const data = [
 const Faq = () => {
   const [show, setShow] = React.useState(null);
 
+  const handleShow = (cardId) => () => {
+    if (show === cardId) {
+      return setShow(null);
+    }
+
+    setShow(cardId);
+  };
+
   return (
     <StyledFaq>
       <Grid>
         {data.map((card) => (
           <Block key={card.id}>
             <Row
-                state={show === card.id}
+              state={show === card.id}
               className={show === card.id ? `active` : ``}
-              onClick={() => setShow(card.id)}
+              onClick={handleShow(card.id)}
             >
               <Title>{card.name}</Title>
               <Burger state={show === card.id}>
@@ -81,7 +89,7 @@ const Row = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-right: 5px;
-  border-bottom: ${props => props.state ? "none" : "1px solid var(--grey)"};
+  border-bottom: ${(props) => (props.state ? "none" : "1px solid var(--grey)")};
   @media screen and (max-width: 1000px) {
     height: 90px;
   }
@@ -119,8 +127,10 @@ const Burger = styled.div`
   display: flex;
   height: 21px;
   width: 21px;
-  div { border-radius: 10px;}
-  .hor { 
+  div {
+    border-radius: 10px;
+  }
+  .hor {
     width: 100%;
     height: 3px;
     background: var(--black);
@@ -133,7 +143,7 @@ const Burger = styled.div`
     transform: translateX(-50%);
     height: 100%;
     width: 3px;
-    background:  var(--black);
-    display: ${props => props.state ? "none" : "block"};
+    background: var(--black);
+    display: ${(props) => (props.state ? "none" : "block")};
   }
-`
+`;
