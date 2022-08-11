@@ -10,7 +10,7 @@ export const HomePage = () => {
   return (
     <>
       {show && <Popup set={setShow} />}
-      <Header set={setShow} />
+      <Header set={setShow} state={show}/>
       <Home />
       <Footer />
     </>

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
-const Header = ({ set }) => {
+const Header = ({ set, state }) => {
   const { t } = useTranslation();
 
   return (
@@ -13,7 +13,7 @@ const Header = ({ set }) => {
           <h4>BorB</h4>
         </div>
         <div className="right">
-          <img src="/assets/lang.svg" alt="" onClick={() => set(true)} />
+          <img src="/assets/lang.svg" alt="" onClick={() => set(!state)} />
           <div className="line"></div>
           <button>{t("head_btn")}</button>
         </div>
