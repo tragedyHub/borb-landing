@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -10,17 +10,17 @@ import { SupplyPage } from './pages/SupplyPage'
 
 const App = () => {
     const [isBurger, setIsBurger] = React.useState(false)
-    const appTag = useMemo(() => document.querySelector('#app'), [])
+
+    const appRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        if (isBurger) return appTag?.classList.add('App_active')
+        if (isBurger) return appRef?.current?.classList.add('App_active')
 
-
-        appTag?.classList.remove('App_active')
-    }, [isBurger, appTag])
+        appRef?.current?.classList.remove('App_active')
+    }, [isBurger])
 
     return (
-        <div className="App" id="app">
+        <div className="App" id="app" ref={appRef}>
             <Nav isBurger={isBurger} setIsBurger={setIsBurger} />
             <div className="main_container">
                 <Header setIsBurger={setIsBurger} />
