@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 
-const StyledAbout = styled.div``
+const StyledAbout = styled.div`
+    margin-bottom: 48px;
+`
 
 const Title = styled.h5`
     margin-bottom: 24px;
     font-weight: 600;
     font-size: 36px;
+    @media screen and (max-width: 1000px) { 
+        margin-bottom: 16px;
+    }
 `
 
 const Text = styled.p`

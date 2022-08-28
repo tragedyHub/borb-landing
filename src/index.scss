@@ -12,16 +12,32 @@ div {
     font-family: 'Inter', sans-serif;
 }
 
-.container {
+.main_container { 
     padding: 0 90px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 1280px) { 
+        padding: 0;
+    }
+}
+
+.container {
+    padding: 0;
+    @media screen and (max-width: 1280px) {
+        padding: 0 70px;
+    }
+    @media screen and (max-width: 1000px) {
+        padding: 0 16px;
+    }
 }
 
 .App {
     display: grid;
     grid-template-columns: 240px 1fr;
     grid-template-rows: 1fr;
+    @media screen and (max-width: 1280px) {
+        display: block;
+    }
 }
 
 input[type='text'],
