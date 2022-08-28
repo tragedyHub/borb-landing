@@ -321,6 +321,7 @@ const Icons = styled.div`
     display: flex;
     align-items: center;
     svg {
+        cursor: pointer;
         width: 20px;
         height: 20px;
     }
