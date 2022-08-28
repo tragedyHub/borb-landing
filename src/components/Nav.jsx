@@ -259,7 +259,10 @@ const StyledNav = styled.div`
   @media screen and (max-width: 1280px) {
     width: 240px;
     position: fixed;
-    z-index: 10px;
+    z-index: 10;
+    box-shadow: ${(props) =>
+      !props.isBurger ? "none" : "6px 0px 16px rgba(10, 31, 51, 0.05)"};
+
     left: 0;
     transform: ${(props) =>
       props.isBurger ? "translateX(0)" : "translateX(-240px)"};
