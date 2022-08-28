@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { useOnClickOutside } from "../lib/useOnClickOutside";
 
@@ -11,12 +12,13 @@ const Nav = (props) => {
     <StyledNav isBurger={props.isBurger} ref={ref}>
       <Top>
         <Logo>
-          <img src="/images/primary/logo.png" alt="" />
+          <img src="/images/primary/Logo.png" alt="" />
           <p>BorB</p>
         </Logo>
         <Block>
           <Title>MANAGEMENTS</Title>
-          <NavLink stroke>
+
+          <StyledLink stroke>
             <svg
               width="20"
               height="20"
@@ -33,8 +35,8 @@ const Nav = (props) => {
               />
             </svg>
             <p>Default Light</p>
-          </NavLink>
-          <NavLink>
+          </StyledLink>
+          <NavLink to="/earn">
             <svg
               width="20"
               height="20"
@@ -52,7 +54,7 @@ const Nav = (props) => {
 
             <p>Earn</p>
           </NavLink>
-          <NavLink>
+          <NavLink to="/supply">
             <svg
               width="20"
               height="20"
@@ -73,7 +75,7 @@ const Nav = (props) => {
         </Block>
         <Block>
           <Title>Support</Title>
-          <NavLink>
+          <NavLink to="/messages">
             <svg
               width="20"
               height="20"
@@ -91,7 +93,7 @@ const Nav = (props) => {
 
             <p>Messages</p>
           </NavLink>
-          <NavLink>
+          <NavLink to="/settings">
             <svg
               width="20"
               height="20"
@@ -119,7 +121,7 @@ const Nav = (props) => {
         </Block>
         <Block>
           <Title>About</Title>
-          <NavLink stroke>
+          <StyledLink stroke>
             <svg
               width="20"
               height="20"
@@ -144,8 +146,8 @@ const Nav = (props) => {
             </svg>
 
             <p>Docs</p>
-          </NavLink>
-          <NavLink>
+          </StyledLink>
+          <StyledLink>
             <svg
               width="20"
               height="20"
@@ -162,7 +164,7 @@ const Nav = (props) => {
             </svg>
 
             <p>Price feed</p>
-          </NavLink>
+          </StyledLink>
         </Block>
       </Top>
       <Bottom>
@@ -260,12 +262,37 @@ const StyledNav = styled.div`
     width: 240px;
     position: fixed;
     z-index: 10;
-    box-shadow: ${(props) =>
-      !props.isBurger ? "none" : "6px 0px 16px rgba(10, 31, 51, 0.05)"};
-
     left: 0;
     transform: ${(props) =>
       props.isBurger ? "translateX(0)" : "translateX(-240px)"};
+  }
+
+  a {
+    cursor: pointer;
+    height: 48px;
+    display: flex;
+    align-items: center;
+
+    p {
+      color: var(--grey60);
+      font-weight: 400;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+
+    &:hover,
+    &.active {
+      path {
+        stroke: ${(props) => (props.stroke ? "var(--pink)" : "none")};
+        fill: ${(props) => (props.stroke ? "none" : "var(--pink)")};
+        transition: 0.2s all ease;
+      }
+      p {
+        color: var(--pink);
+        font-weight: 600;
+        transition: 0.2s all ease;
+      }
+    }
   }
 `;
 
@@ -283,6 +310,10 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 44px;
+  img {
+    width: 20px;
+    height: 28px;
+  }
   p {
     margin-left: 8px;
     font-weight: 600;
@@ -298,10 +329,9 @@ const Title = styled.h4`
   margin-bottom: 16px;
 `;
 
-const NavLink = styled.div`
+const StyledLink = styled.div`
   cursor: pointer;
   height: 48px;
-
   display: flex;
   align-items: center;
 

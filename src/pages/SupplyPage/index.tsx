@@ -123,7 +123,7 @@ const Subtitle = styled.p`
   }
 `;
 
-const TabContainer = styled.div`
+export const TabContainer = styled.div`
   display: flex;
 
   position: relative;
@@ -142,7 +142,7 @@ const TabContainer = styled.div`
   }
 `;
 
-const Tab = styled.button<{ active?: boolean }>`
+export const Tab = styled.div<{ active?: boolean }>`
   padding: 8px 4px;
   position: relative;
 
@@ -156,10 +156,18 @@ const Tab = styled.button<{ active?: boolean }>`
     line-height: 140%;
     font-size: 14px;
     line-height: 140%;
+    display: flex;
+    align-items: center;
+  }
+  h3 {
+    color: var(--green);
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 5px;
   }
 `;
 
-const SettingsTitle = styled.span<{ margin?: string }>`
+export const SettingsTitle = styled.span<{ margin?: string }>`
   font-family: "Inter";
   font-weight: 400;
   font-size: 14px;
@@ -193,7 +201,7 @@ const InputContainer = styled.div`
   }
 `;
 
-const InputWrapper = styled.div<{ disabled?: boolean }>`
+export const InputWrapper = styled.div<{ disabled?: boolean }>`
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -234,10 +242,10 @@ const InputWrapper = styled.div<{ disabled?: boolean }>`
       color: #c2c5cc;
       text-align: right;
     }
+  }
 
-    @media screen and (max-width: 786px) {
-      width: 100%;
-    }
+  @media screen and (max-width: 786px) {
+    width: 100%;
   }
 `;
 
@@ -253,7 +261,7 @@ const TitleContainer = styled.div`
   }
 `;
 
-const SelectWrapper = styled.div`
+export const SelectWrapper = styled.div`
   display: flex;
   align-items: center;
 
@@ -266,7 +274,7 @@ const SelectWrapper = styled.div`
   }
 `;
 
-const CurrencyWrapper = styled.div`
+export const CurrencyWrapper = styled.div`
   margin-right: 4px;
   display: flex;
   justify-content: center;
@@ -291,6 +299,7 @@ const Btn = styled.button`
     width: 100%;
   }
 `;
+
 const PurchaseWrapper = styled.div`
   display: flex;
   gap: 20px;

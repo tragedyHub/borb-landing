@@ -12,7 +12,7 @@ const Header = (props) => {
                     onClick={() => props.setIsBurger(true)}
                 />
                 <div className="logo">
-                    <img src="/images/primary/logo.png" alt="" />
+                    <img src="/images/primary/Logo.png" alt="" />
                     <p>BorB</p>
                 </div>
             </div>
