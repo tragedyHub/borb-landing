@@ -32,8 +32,8 @@ const App = () => {
                         <Route path="/earn" element={<EarnPage />} />
                     </Routes>
                 </div>
-                <Footer />
             </div>
+            <Footer />
         </div>
     )
 }
