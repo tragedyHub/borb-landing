@@ -3,8 +3,11 @@ import { ReactComponent as InfoIcon } from '../../assets/info-icon.svg'
 import { ReactComponent as USDCIcon } from '../../assets/usdc-icon.svg'
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-down-icon.svg'
 import { Faq } from '../../components/Faq'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 const SupplyPage = () => {
+    const isMobile = useMediaQuery('(max-width: 768px)')
+
     return (
         <div className="container">
             <Title>Supply crypto and earn interest</Title>
@@ -21,7 +24,12 @@ const SupplyPage = () => {
             </TabContainer>
             <InputContainer>
                 <InputWrapper>
-                    <SettingsTitle margin="9px">Supply</SettingsTitle>
+                    <TitleContainer>
+                        <SettingsTitle margin="9px">Supply</SettingsTitle>
+                        {isMobile && (
+                            <SettingsTitle>Balance: 263</SettingsTitle>
+                        )}
+                    </TitleContainer>
                     <div className="input-wrapper">
                         <SelectWrapper>
                             <CurrencyWrapper>
@@ -39,6 +47,7 @@ const SupplyPage = () => {
                 </InputWrapper>
                 <InputWrapper disabled>
                     <SettingsTitle margin="9px">Receive</SettingsTitle>
+
                     <div className="input-wrapper">
                         <SelectWrapper>
                             <CurrencyWrapper>
@@ -55,7 +64,9 @@ const SupplyPage = () => {
                     </div>
                 </InputWrapper>
             </InputContainer>
-            <SettingsTitle margin="24px">Balance: 263</SettingsTitle>
+            {!isMobile && (
+                <SettingsTitle margin="24px">Balance: 263</SettingsTitle>
+            )}
             <Btn>Supply USDC</Btn>
             <PurchaseWrapper>
                 <PurchaseDataList>
@@ -102,15 +113,27 @@ const Title = styled.h1`
     line-height: 140%;
     color: #23272b;
     margin-bottom: 4px;
+
+    @media screen and (max-width: 480px) {
+        font-size: 32px;
+    }
 `
 
-const Subtitle = styled.h2`
+const Subtitle = styled.p`
     font-family: 'Inter';
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
     color: #8a8f99;
     margin-bottom: 48px;
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 480px) {
+        margin-bottom: 24px;
+    }
 `
 
 export const TabContainer = styled.div`
@@ -184,6 +207,11 @@ const InputContainer = styled.div`
         font-size: 14px;
         line-height: 140%;
     }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
 `
 
 export const InputWrapper = styled.div<{ disabled?: boolean }>`
@@ -203,6 +231,10 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
 
         background-color: ${({ disabled }) =>
             disabled ? '#F6F8FC' : 'transparent'};
+
+        @media screen and (max-width: 786px) {
+            width: 100%;
+        }
     }
 
     .input {
@@ -223,6 +255,22 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
             color: #c2c5cc;
             text-align: right;
         }
+    }
+
+    @media screen and (max-width: 786px) {
+        width: 100%;
+    }
+`
+
+const TitleContainer = styled.div`
+    @media screen and (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        width: 340px;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
     }
 `
 
@@ -255,8 +303,16 @@ const Btn = styled.button`
     line-height: 140%;
     color: #238069;
     align-self: flex-start;
-    margin-bottom: 37px;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 32px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
 `
+
 const PurchaseWrapper = styled.div`
     display: flex;
     gap: 20px;
