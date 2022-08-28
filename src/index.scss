@@ -1,38 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+a,
+li,
+div {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    color: var(--black);
+    font-size: 18px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
 
 .container {
-  padding: 0 90px;
+    padding: 0 90px;
 }
 
+.App {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 1fr;
+}
 
-
-input[type=text], input[type=number] {
-  border: none;
-  background: none;
-  box-shadow:  none;
+input[type='text'],
+input[type='number'] {
+    border: none;
+    background: none;
+    box-shadow: none;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+
+
+:root {
+  --black: #23272b;
+  --grey60: #8a8f99;
+  --grey80: #c2c5cc;
+  --grey95: #e9ecf2;
+  --grey99: #f6f8fc;
+  --green: #3fe7be;
+  --dark-green: #238069;
+  --pink: #ff577e;
+  --dark-pink: #8c3045;
+  --white: #fff;
 }
