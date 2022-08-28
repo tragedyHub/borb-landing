@@ -229,8 +229,7 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
         padding: 12px;
         display: flex;
 
-        background-color: ${({ disabled }) =>
-            disabled ? '#F6F8FC' : 'transparent'};
+        background-color: ${({ disabled }) => (disabled ? '#F6F8FC' : '#fff')};
 
         @media screen and (max-width: 786px) {
             width: 100%;
