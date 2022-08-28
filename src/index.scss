@@ -6,7 +6,7 @@ div {
     margin: 0;
     text-decoration: none;
     list-style: none;
-    color: #000;
+    color: var(--black);
     font-size: 18px;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
@@ -14,6 +14,12 @@ div {
 
 .container {
     padding: 0 90px;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 1fr;
 }
 
 input[type='text'],
@@ -32,4 +38,19 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
     -moz-appearance: textfield;
+}
+
+
+
+:root {
+  --black: #23272b;
+  --grey60: #8a8f99;
+  --grey80: #c2c5cc;
+  --grey95: #e9ecf2;
+  --grey99: #f6f8fc;
+  --green: #3fe7be;
+  --dark-green: #238069;
+  --pink: #ff577e;
+  --dark-pink: #8c3045;
+  --white: #fff;
 }
