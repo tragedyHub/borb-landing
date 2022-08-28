@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useOnClickOutside } from '../lib/useOnClickOutside'
 
-const Nav = () => {
+const Nav = (props) => {
+    let ref = React.useRef()
+
+    useOnClickOutside(ref, () => props.setIsBurger(false))
+
     return (
-        <StyledNav>
+        <StyledNav isBurger={props.isBurger} ref={ref}>
             <Top>
                 <Logo>
                     <img src="/images/primary/logo.png" alt="" />
@@ -250,6 +255,14 @@ const StyledNav = styled.div`
     padding-bottom: 24px;
     background: #ffffff;
     box-shadow: 6px 0px 16px rgba(10, 31, 51, 0.05);
+    transition: 0.5s all ease;
+    @media screen and (max-width: 1280px) {
+        width: 240px;
+        position: fixed;
+        left: 0;
+        transform: ${(props) =>
+            props.isBurger ? 'translateX(0)' : 'translateX(-240px)'};
+    }
 `
 
 const Block = styled.div`
