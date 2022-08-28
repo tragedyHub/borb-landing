@@ -17,6 +17,7 @@ const Nav = (props) => {
                 </Logo>
                 <Block>
                     <Title>MANAGEMENTS</Title>
+
                     <StyledLink stroke>
                         <svg
                             width="20"
@@ -279,7 +280,8 @@ const StyledNav = styled.div`
             margin-left: 8px;
         }
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
             path {
                 stroke: ${(props) => (props.stroke ? 'var(--pink)' : 'none')};
                 fill: ${(props) => (props.stroke ? 'none' : 'var(--pink)')};
