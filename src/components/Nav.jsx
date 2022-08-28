@@ -12,7 +12,7 @@ const Nav = (props) => {
         <StyledNav isBurger={props.isBurger} ref={ref}>
             <Top>
                 <Logo>
-                    <img src="/images/primary/logo.png" alt="" />
+                    <img src="/images/primary/Logo.png" alt="" />
                     <p>BorB</p>
                 </Logo>
                 <Block>
@@ -285,6 +285,10 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 44px;
+    img {
+        width: 20px;
+        height: 28px;
+    }
     p {
         margin-left: 8px;
         font-weight: 600;
