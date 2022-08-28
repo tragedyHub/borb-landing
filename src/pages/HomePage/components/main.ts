@@ -8,11 +8,17 @@ const StyledHome = styled.div`
 
 const Row = styled.div`
     display: grid;
-    grid-template-columns: 556px 1fr;
+    grid-template-columns: 1fr 388px;
     grid-gap: 48px;
     justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 `
+
 const Left = styled.div``
+
 const Right = styled.div`
     padding: 24px;
     background: var(--grey99);
@@ -21,7 +27,11 @@ const Right = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
+    @media screen and (max-width: 1000px) {
+        padding: 32px 0 40px;
+    }
 `
+
 const Counter = styled.h4`
     margin-bottom: 32px;
     color: var(--green);
