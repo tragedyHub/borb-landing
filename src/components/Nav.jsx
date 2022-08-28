@@ -167,6 +167,11 @@ const Nav = (props) => {
                     </StyledLink>
                 </Block>
             </Top>
+            <Language>
+                <img src="/images/primary/language.svg" alt="" />
+                <p>English</p>
+                <img src="/images/primary/arrow2.svg" alt="" />
+            </Language>
             <Bottom>
                 <Icons>
                     <svg
@@ -249,6 +254,23 @@ const Nav = (props) => {
 
 export default Nav
 
+const Language = styled.div`
+    display: none;
+    @media screen and (max-width: 1280px) { 
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        padding: 0 24px;
+        cursor: pointer;
+        p {
+            margin-left: 8px;
+            color: var(--grey60);
+            font-weight: 400;
+            font-size: 14px;
+        }
+    }
+`
+
 const StyledNav = styled.div`
     width: 100%;
     display: flex;
@@ -259,6 +281,7 @@ const StyledNav = styled.div`
     box-shadow: 6px 0px 16px rgba(10, 31, 51, 0.05);
     transition: 0.5s all ease;
     @media screen and (max-width: 1280px) {
+        padding-bottom: 32px;
         width: 240px;
         position: fixed;
         z-index: 10;
@@ -300,6 +323,13 @@ const Block = styled.div`
     &:nth-child(n + 2) {
         margin-top: 40px;
     }
+
+    @media screen and (max-width: 1280px) {
+        margin: 0!important;
+        &:nth-child(n+3) { 
+            margin-top: 24px!important;
+        }
+    }
 `
 
 const Top = styled.div`
@@ -319,6 +349,9 @@ const Logo = styled.div`
         font-weight: 600;
         font-size: 24px;
     }
+    @media screen and (max-width: 1280px) {
+        display: none;
+    }
 `
 
 const Title = styled.h4`
@@ -327,6 +360,9 @@ const Title = styled.h4`
     margin-left: 1px;
     font-size: 12px;
     margin-bottom: 16px;
+    @media screen and (max-width: 1280px) {
+        margin-bottom: 12px;
+    }
 `
 
 const StyledLink = styled.div`
@@ -360,6 +396,10 @@ const Bottom = styled.div`
     margin-top: auto;
     padding-top: 28px;
     border-top: 1px solid var(--grey95);
+
+    @media screen and (max-width: 1280px) {
+        display: none;
+    }
 `
 
 const Icons = styled.div`
