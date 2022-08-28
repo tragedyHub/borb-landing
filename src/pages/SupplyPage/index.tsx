@@ -129,6 +129,7 @@ const InputContainer = styled.div`
     text-align: right;
 
     margin-left: auto;
+    outline: none;
 
     &::placeholder {
       font-family: "Inter";
@@ -139,6 +140,11 @@ const InputContainer = styled.div`
       text-align: right;
     }
   }
+`;
+
+const SelectWrapper = styled.div`
+  
+
 `;
 
 export { SupplyPage };
