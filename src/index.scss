@@ -16,6 +16,7 @@ div {
     padding: 0 90px;
     display: flex;
     flex-direction: column;
+    height: 100%;
     @media screen and (max-width: 1280px) { 
         padding: 0;
     }
@@ -35,8 +36,10 @@ div {
     display: grid;
     grid-template-columns: 240px 1fr;
     grid-template-rows: 1fr;
+    min-height: 100vh;
     @media screen and (max-width: 1280px) {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -63,6 +66,10 @@ button {
     box-shadow: none;
     background: none;
     cursor: pointer;
+}
+
+#root {
+    min-height: 100vh;
 }
 
 

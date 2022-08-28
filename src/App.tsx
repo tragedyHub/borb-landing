@@ -10,8 +10,7 @@ import { SupplyPage } from './pages/SupplyPage'
 const App = () => {
     const [isBurger, setIsBurger] = React.useState(false)
 
-    console.log(isBurger);
-    
+    console.log(isBurger)
 
     return (
         <div className="App">
@@ -20,7 +19,7 @@ const App = () => {
                 className="main_container"
                 style={{ display: 'flex', flexDirection: 'column' }}
             >
-                <Header setIsBurger={setIsBurger}/>
+                <Header setIsBurger={setIsBurger} />
                 <div className="container">
                     <Routes>
                         <Route path="/" element={<div>home page</div>} />
@@ -29,8 +28,8 @@ const App = () => {
                         <Route path="/earn" element={<EarnPage />} />
                     </Routes>
                 </div>
-                <Footer />
             </div>
+            <Footer />
         </div>
     )
 }
