@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
 import Nav from './components/Nav'
 import AboutPage from './pages/AboutPage'
 import EarnPage from './pages/EarnPage'
@@ -9,7 +10,11 @@ const App = () => {
     return (
         <div className="App">
             <Nav />
-            <div className="container">
+            <div
+                className="container"
+                style={{ display: 'flex', flexDirection: 'column' }}
+            >
+                <Header />
                 <Routes>
                     <Route path="/" element={<div>home page</div>} />
                     <Route path="/supply" element={<SupplyPage />} />
