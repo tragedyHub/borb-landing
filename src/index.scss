@@ -14,6 +14,8 @@ div {
 
 .container {
     padding: 0 90px;
+    display: flex;
+    flex-direction: column;
 }
 
 .App {
@@ -38,6 +40,13 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
     -moz-appearance: textfield;
+}
+
+button {
+    border: none;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
 }
 
 
