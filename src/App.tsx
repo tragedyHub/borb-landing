@@ -15,7 +15,6 @@ const App = () => {
     useEffect(() => {
         if (isBurger) return appTag?.classList.add('App_active')
 
-        console.log('qweqwe')
 
         appTag?.classList.remove('App_active')
     }, [isBurger, appTag])

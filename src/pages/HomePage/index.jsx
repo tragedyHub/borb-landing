@@ -114,7 +114,7 @@ const Home = () => {
             <Table>
                 <thead>
                     <tr>
-                        <th>Asset</th>
+                        <th className="first">Asset</th>
                         <th className="adaptive">Direction</th>
                         <th>Open</th>
                         <th>Close</th>
@@ -125,10 +125,23 @@ const Home = () => {
                 <tbody>
                     {array.map((item) => (
                         <tr className="row">
-                            <td>
+                            <td className="first_td">
                                 <img src="/images/home/bitcoin.svg" alt="" />
+                                <svg
+                                    className="first_td_adaptive"
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M16 12L22 20H10L16 12Z"
+                                        fill="var(--green)"
+                                    />
+                                </svg>
                             </td>
-                            <td>
+                            <td className="adaptive">
                                 <svg
                                     width="32"
                                     height="32"
