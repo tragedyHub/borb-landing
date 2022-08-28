@@ -33,65 +33,67 @@ const Home = () => {
             <Row>
                 <Left></Left>
                 <Right>
-                    <Counter>86%</Counter>
-                    <InputWrapper>
-                        <SettingsTitle margin="9px">Supply</SettingsTitle>
-                        <div className="input-wrapper">
-                            <SelectWrapper>
-                                <CurrencyWrapper>
-                                    <USDCIcon />
-                                </CurrencyWrapper>
-                                <span>USTC</span>
-                                <ArrowIcon />
-                            </SelectWrapper>
-                            <input
-                                type="number"
-                                className="input"
-                                placeholder="Amount"
-                            />
-                        </div>
-                    </InputWrapper>
-                    <HelperRow>
-                        <Text>Balance: 263</Text>
-                        <Text>$257 payout</Text>
-                    </HelperRow>
-                    <Grid>
-                        <Card>10%</Card>
-                        <Card>25%</Card>
-                        <Card>50%</Card>
-                        <Card>75%</Card>
-                        <Card>Max</Card>
-                    </Grid>
-                    <Buttons>
-                        <Button>
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M16 12L22 20H10L16 12Z"
-                                    fill="#238069"
+                    <div className="content">
+                        <Counter>86%</Counter>
+                        <InputWrapper>
+                            <SettingsTitle margin="9px">Supply</SettingsTitle>
+                            <div className="input-wrapper">
+                                <SelectWrapper>
+                                    <CurrencyWrapper>
+                                        <USDCIcon />
+                                    </CurrencyWrapper>
+                                    <span>USTC</span>
+                                    <ArrowIcon />
+                                </SelectWrapper>
+                                <input
+                                    type="number"
+                                    className="input"
+                                    placeholder="Amount"
                                 />
-                            </svg>
-                        </Button>
-                        <Button red>
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 32 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M16 20L10 12L22 12L16 20Z"
-                                    fill="#8C3045"
-                                />
-                            </svg>
-                        </Button>
-                    </Buttons>
+                            </div>
+                        </InputWrapper>
+                        <HelperRow>
+                            <Text>Balance: 263</Text>
+                            <Text>$257 payout</Text>
+                        </HelperRow>
+                        <Grid>
+                            <Card>10%</Card>
+                            <Card>25%</Card>
+                            <Card>50%</Card>
+                            <Card>75%</Card>
+                            <Card>Max</Card>
+                        </Grid>
+                        <Buttons>
+                            <Button>
+                                <svg
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M16 12L22 20H10L16 12Z"
+                                        fill="#238069"
+                                    />
+                                </svg>
+                            </Button>
+                            <Button red>
+                                <svg
+                                    width="32"
+                                    height="32"
+                                    viewBox="0 0 32 32"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M16 20L10 12L22 12L16 20Z"
+                                        fill="#8C3045"
+                                    />
+                                </svg>
+                            </Button>
+                        </Buttons>
+                    </div>
                 </Right>
             </Row>
             <Title>Trade</Title>
@@ -113,7 +115,7 @@ const Home = () => {
                 <thead>
                     <tr>
                         <th>Asset</th>
-                        <th>Direction</th>
+                        <th className="adaptive">Direction</th>
                         <th>Open</th>
                         <th>Close</th>
                         <th>Chart</th>
@@ -145,9 +147,7 @@ const Home = () => {
                             <td>
                                 <img src="/images/home/Chart.png" alt="" />
                             </td>
-                            <td className="green last">
-                                +266.454
-                            </td>
+                            <td className="green last">+266.454</td>
                         </tr>
                     ))}
                 </tbody>
