@@ -29,14 +29,37 @@ const Table = styled.table`
         font-weight: 400;
     }
 
-    td { 
+    td {
         font-weight: 400;
         font-size: 14px;
         text-align: center;
     }
 
-    .last.green { 
+    .last.green {
         color: var(--green);
+    }
+
+    .first_td_adaptive {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        .adaptive {
+            display: none;
+        }
+        .first,
+        .first_td {
+            text-align: left;
+        }
+        .first_td {
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+        }
+
+        .first_td_adaptive {
+            margin-left: 8px;
+            display: inline-block; 
+        }
     }
 `
 
