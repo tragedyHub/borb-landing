@@ -14,19 +14,31 @@ import {
     Button,
     Buttons,
     Card,
+    Column,
     Counter,
     Grid,
+    Head,
     HelperRow,
     Left,
+    Popup,
+    PopupBottom,
+    PopupButton,
+    PopupContent,
+    PopupTitle,
     Right,
     Row,
     StyledHome,
     Text,
 } from './components/main'
 import { Pagination, Table, Title } from './components/bottom'
+import { useOnClickOutside } from '../../lib/useOnClickOutside'
 
 const Home = () => {
     let array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    const [show, setShow] = React.useState(false)
+    let ref = React.useRef()
+
+    useOnClickOutside(ref, () => setShow(false))
 
     return (
         <StyledHome>
@@ -64,7 +76,7 @@ const Home = () => {
                             <Card>Max</Card>
                         </Grid>
                         <Buttons>
-                            <Button>
+                            <Button onClick={() => setShow(true)}>
                                 <svg
                                     width="32"
                                     height="32"
@@ -78,7 +90,7 @@ const Home = () => {
                                     />
                                 </svg>
                             </Button>
-                            <Button red>
+                            <Button red onClick={() => setShow(true)}>
                                 <svg
                                     width="32"
                                     height="32"
@@ -174,6 +186,46 @@ const Home = () => {
                     style={{ transform: 'rotate(180deg)' }}
                 />
             </Pagination>
+
+            <Popup show={show} >
+                <PopupContent ref={ref}>
+                    <Head>
+                        <PopupTitle>Trade result</PopupTitle>
+                        <img
+                            src="/images/home/close.svg"
+                            alt=""
+                            onClick={() => setShow(false)}
+                        />
+                    </Head>
+                    <PopupBottom>
+                        <Column>
+                            <p>Asset</p>
+                            <img src="/images/home/bitcoin.svg" alt="" />
+                        </Column>
+                        <Column>
+                            <p>Direction</p>
+                            <svg
+                                style={{ position: 'relative', bottom: '-6px' }}
+                                width="32"
+                                height="32"
+                                viewBox="0 0 32 32"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M16 12L22 20H10L16 12Z"
+                                    fill="var(--green)"
+                                />
+                            </svg>
+                        </Column>
+                        <Column>
+                            <p>Timeframe</p>
+                            <span>15 min</span>
+                        </Column>
+                        <PopupButton>Claim $100</PopupButton>
+                    </PopupBottom>
+                </PopupContent>
+            </Popup>
         </StyledHome>
     )
 }

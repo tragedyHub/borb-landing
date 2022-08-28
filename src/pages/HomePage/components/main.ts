@@ -91,7 +91,85 @@ const Text = styled.div`
     font-weight: 400;
 `
 
+const Popup = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: grid;
+    place-content: center;
+
+    display: ${(props: any) => (props.show ? 'grid' : 'none')};
+`
+
+const PopupContent = styled.div`
+    background: #fff;
+    width: 600px;
+    border-radius: 16px;
+`
+const Head = styled.div`
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+        cursor: pointer;
+    }
+`
+const PopupTitle = styled.h4`
+    font-size: 24px;
+    font-weight: 600;
+`
+const PopupBottom = styled.div`
+    margin-top: 32px;
+    background: #f6f8fc;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 152px;
+    grid-template-rows: 48px;
+    align-items: center;
+    justify-content: space-between;
+`
+const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    p {
+        color: var(--grey80);
+        font-size: 12px;
+        font-weight: 400;
+    }
+    span {
+        margin-top: 4px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+`
+const PopupButton = styled.div`
+    padding: 13px 32px;
+    background: var(--green);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--dark-green);
+    font-size: 16px;
+    font-weight: 600;
+`
+
 export {
+    Head,
+    PopupBottom,
+    PopupTitle,
+    Column,
+    PopupButton,
+    Popup,
+    PopupContent,
     Text,
     HelperRow,
     Row,
