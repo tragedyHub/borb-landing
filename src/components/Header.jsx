@@ -45,6 +45,7 @@ const Header = (props) => {
                     src="/images/primary/moon.svg"
                     alt=""
                     style={{ marginRight: '24px' }}
+                    onClick={props.changeTheme}
                 />
                 <img
                     src="/images/primary/language.svg"

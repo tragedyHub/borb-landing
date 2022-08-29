@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { ReactComponent as InfoIcon } from '../../assets/info-icon.svg'
 import { ReactComponent as USDCIcon } from '../../assets/usdc-icon.svg'
-import { ReactComponent as ArrowIcon } from '../../assets/arrow-down-icon.svg'
+import { ReactComponent as Arrow } from '../../assets/arrow-down-icon.svg'
 import { Faq } from '../../components/Faq'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 
@@ -111,7 +111,7 @@ const Title = styled.h1`
     font-weight: 600;
     font-size: 36px;
     line-height: 140%;
-    color: #23272b;
+    color: ${(props) => props.theme.titleColor};
     margin-bottom: 4px;
 
     @media screen and (max-width: 480px) {
@@ -124,7 +124,7 @@ const Subtitle = styled.p`
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
-    color: #8a8f99;
+    color: ${(props) => props.theme.subtitleColor};
     margin-bottom: 48px;
 
     @media screen and (max-width: 1000px) {
@@ -151,7 +151,7 @@ export const TabContainer = styled.div`
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: #e9ecf2;
+        background-color: ${(props) => props.theme.tabBorderColor};
     }
 `
 
@@ -223,13 +223,19 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
     .input-wrapper {
         width: 340px;
         border: 1px solid #e9ecf2;
-        border: ${({ disabled }) =>
-            disabled ? '1px solid transparent' : '1px solid #e9ecf2'};
+        border: ${({ disabled, theme }) =>
+            disabled
+                ? `1px solid ${theme.inputDisabledBorderColor}`
+                : `1px solid ${theme.inputBorderColor}`};
+
         border-radius: 8px;
         padding: 12px;
         display: flex;
 
-        background-color: ${({ disabled }) => (disabled ? '#F6F8FC' : '#fff')};
+        background-color: ${({ disabled, theme }) =>
+            disabled
+                ? theme.inputWrapperDisabledColor
+                : theme.inputWrapperColor};
 
         @media screen and (max-width: 786px) {
             width: 100%;
@@ -251,7 +257,7 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
             font-weight: 400;
             font-size: 21px;
             line-height: 30px;
-            color: #c2c5cc;
+            color: ${(props) => props.theme.inputPlaceholderColor};
             text-align: right;
         }
     }
@@ -282,7 +288,7 @@ export const SelectWrapper = styled.div`
         font-weight: 400;
         font-size: 14px;
         line-height: 140%;
-        color: #23272b;
+        color: ${(props) => props.theme.selectColor};
     }
 `
 
@@ -324,5 +330,11 @@ const PurchaseDataList = styled.ul`
     gap: 8px;
 `
 const PurchaseDataItem = styled.li``
+
+const ArrowIcon = styled(Arrow)`
+    path {
+        fill: ${(props) => props.theme.arrowBackgroundColor};
+    }
+`
 
 export { SupplyPage }
