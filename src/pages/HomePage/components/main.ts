@@ -33,7 +33,7 @@ const StyledHome = styled.div`
     @media screen and (max-width: 768px) {
         .btc {
             margin-bottom: 4px;
-            h4 { 
+            h4 {
                 font-size: 32px;
             }
         }
@@ -142,6 +142,13 @@ const PopupContent = styled.div`
     background: #fff;
     width: 600px;
     border-radius: 16px;
+    margin-top: auto;
+    @media screen and (max-width: 768px) {
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+    }
 `
 const Head = styled.div`
     padding: 24px 30px;
@@ -167,6 +174,16 @@ const PopupBottom = styled.div`
     grid-template-rows: 48px;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 768px) {
+        margin-top: auto;
+        padding: 20px 16px;
+        grid-template-columns: 32px 51px 61px 152px;
+    }
+    @media screen and (max-width: 480px) {
+        grid-template-rows: 48px 48px;
+        grid-template-columns: 32px 51px 61px;
+        grid-row-gap: 21px;
+    }
 `
 const Column = styled.div`
     display: flex;
@@ -185,6 +202,17 @@ const Column = styled.div`
         font-weight: 600;
         font-size: 16px;
     }
+    @media screen and (max-width: 480px) {
+        &:nth-child(1) {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+        &:nth-child(2) {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+        &:nth-child(3) {
+            grid-area: 1 / 3 / 2 / 4;
+        }
+    }
 `
 const PopupButton = styled.div`
     padding: 13px 32px;
@@ -194,6 +222,10 @@ const PopupButton = styled.div`
     color: var(--dark-green);
     font-size: 16px;
     font-weight: 600;
+    @media screen and (max-width: 480px) {
+        grid-area: 2 / 1 / 3 / 4;
+        text-align: center;
+    }
 `
 
 export {
