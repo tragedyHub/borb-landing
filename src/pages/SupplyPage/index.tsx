@@ -188,7 +188,6 @@ export const SettingsTitle = styled.span<{ margin?: string }>`
     margin-bottom: ${(props) => props.margin ?? '0px'};
     color: #8a8f99;
     display: flex;
-    /* align-items: center; */
 
     svg {
         margin-left: 8px;

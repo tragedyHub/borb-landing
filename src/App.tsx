@@ -109,6 +109,8 @@ const MainContainer = styled.div`
     flex-direction: column;
     height: 100%;
     background: ${(props) => props.theme.backgroundContent};
+
+    transition: background-color 0.3s ease;
     @media screen and (max-width: 1280px) {
         padding: 0;
     }
