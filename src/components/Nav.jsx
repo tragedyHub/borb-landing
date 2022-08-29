@@ -256,7 +256,7 @@ export default Nav
 
 const Language = styled.div`
     display: none;
-    @media screen and (max-width: 1280px) { 
+    @media screen and (max-width: 1280px) {
         display: flex;
         align-items: center;
         margin-top: auto;
@@ -295,6 +295,8 @@ const StyledNav = styled.div`
         height: 48px;
         display: flex;
         align-items: center;
+        padding: 0 16px;
+        margin: 0 9px;
 
         p {
             color: var(--grey60);
@@ -303,8 +305,10 @@ const StyledNav = styled.div`
             margin-left: 8px;
         }
 
-        &:hover,
-        &.active {
+        &:hover {
+            transition: 0.2s all ease;
+            background: #f6f8fc;
+            border-radius: 8px;
             path {
                 stroke: ${(props) => (props.stroke ? 'var(--pink)' : 'none')};
                 fill: ${(props) => (props.stroke ? 'none' : 'var(--pink)')};
@@ -325,21 +329,20 @@ const Block = styled.div`
     }
 
     @media screen and (max-width: 1280px) {
-        margin: 0!important;
-        &:nth-child(n+3) { 
-            margin-top: 24px!important;
+        margin: 0 !important;
+        &:nth-child(n + 3) {
+            margin-top: 24px !important;
         }
     }
 `
 
-const Top = styled.div`
-    padding: 24px;
-`
+const Top = styled.div``
 
 const Logo = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 44px;
+    padding: 24px 24px 0;
     img {
         width: 20px;
         height: 28px;
@@ -355,6 +358,7 @@ const Logo = styled.div`
 `
 
 const Title = styled.h4`
+    padding: 0 24px;
     font-weight: 400;
     color: var(--grey60);
     margin-left: 1px;
@@ -370,6 +374,8 @@ const StyledLink = styled.div`
     height: 48px;
     display: flex;
     align-items: center;
+    padding: 0 16px;
+    margin: 0 9px;
 
     p {
         color: var(--grey60);
@@ -379,6 +385,9 @@ const StyledLink = styled.div`
     }
 
     &:hover {
+        transition: 0.2s all ease;
+        background: #f6f8fc;
+        border-radius: 8px;
         path {
             stroke: ${(props) => (props.stroke ? 'var(--pink)' : 'none')};
             fill: ${(props) => (props.stroke ? 'none' : 'var(--pink)')};
