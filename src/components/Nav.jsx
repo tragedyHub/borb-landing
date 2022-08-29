@@ -305,10 +305,7 @@ const StyledNav = styled.div`
             margin-left: 8px;
         }
 
-        &:hover {
-            transition: 0.2s all ease;
-            background: #f6f8fc;
-            border-radius: 8px;
+        &.active {
             path {
                 stroke: ${(props) => (props.stroke ? 'var(--pink)' : 'none')};
                 fill: ${(props) => (props.stroke ? 'none' : 'var(--pink)')};
@@ -316,6 +313,22 @@ const StyledNav = styled.div`
             }
             p {
                 color: var(--pink);
+                font-weight: 600;
+                transition: 0.2s all ease;
+            }
+        }
+
+        &:hover {
+            transition: 0.2s all ease;
+            background: #f6f8fc;
+            border-radius: 8px;
+            path {
+                stroke: ${(props) => (props.stroke ? 'var(--black)' : 'none')};
+                fill: ${(props) => (props.stroke ? 'none' : 'var(--black)')};
+                transition: 0.2s all ease;
+            }
+            p {
+                color: var(--black);
                 font-weight: 600;
                 transition: 0.2s all ease;
             }
@@ -384,21 +397,21 @@ const StyledLink = styled.div`
         margin-left: 8px;
     }
 
-    &:hover {
-        transition: 0.2s all ease;
-        background: #f6f8fc;
-        border-radius: 8px;
-        path {
-            stroke: ${(props) => (props.stroke ? 'var(--pink)' : 'none')};
-            fill: ${(props) => (props.stroke ? 'none' : 'var(--pink)')};
+        &:hover {
             transition: 0.2s all ease;
+            background: #f6f8fc;
+            border-radius: 8px;
+            path {
+                stroke: ${(props) => (props.stroke ? 'var(--black)' : 'none')};
+                fill: ${(props) => (props.stroke ? 'none' : 'var(--black)')};
+                transition: 0.2s all ease;
+            }
+            p {
+                color: var(--black);
+                font-weight: 600;
+                transition: 0.2s all ease;
+            }
         }
-        p {
-            color: var(--pink);
-            font-weight: 600;
-            transition: 0.2s all ease;
-        }
-    }
 `
 
 const Bottom = styled.div`
