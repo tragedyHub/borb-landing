@@ -4,6 +4,40 @@ const StyledHome = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 48px;
+
+    .btc {
+        display: none;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 16px;
+        .currency {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 36px;
+        }
+    }
+    @media screen and (max-width: 1280px) {
+        .btc {
+            display: flex;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        .btc {
+            margin-bottom: 12px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .btc {
+            margin-bottom: 4px;
+            h4 { 
+                font-size: 32px;
+            }
+        }
+    }
 `
 
 const Row = styled.div`

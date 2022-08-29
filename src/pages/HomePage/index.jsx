@@ -42,6 +42,15 @@ const Home = () => {
 
     return (
         <StyledHome>
+            <div className="btc">
+                <img
+                    src="/images/home/bitcoin.svg"
+                    alt=""
+                    className="currency"
+                />
+                <h4>BTC</h4>
+                <img src="/images/primary/blackArrow.svg" alt="" />
+            </div>
             <Row>
                 <Left></Left>
                 <Right>
@@ -187,7 +196,7 @@ const Home = () => {
                 />
             </Pagination>
 
-            <Popup show={show} >
+            <Popup show={show}>
                 <PopupContent ref={ref}>
                     <Head>
                         <PopupTitle>Trade result</PopupTitle>

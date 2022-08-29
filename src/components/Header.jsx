@@ -1,9 +1,33 @@
 import React from 'react'
+import { useLocation } from 'react-router'
 import styled from 'styled-components'
 
 const Header = (props) => {
+    const [trueLocation, setTrueLocation] = React.useState(false)
+    let location = useLocation()
+
+    React.useEffect(() => {
+        if (location.pathname === '/') {
+            setTrueLocation(true)
+        } else {
+            setTrueLocation(false)
+        }
+    }, [location])
+
     return (
-        <StyledHeader>
+        <StyledHeader location={trueLocation}>
+            {trueLocation && (
+                <div className="btc">
+                    <img
+                        src="/images/home/bitcoin.svg"
+                        alt=""
+                        className="currency"
+                    />
+                    <h4>BTC</h4>
+                    <img src="/images/primary/blackArrow.svg" alt="" />
+                </div>
+            )}
+
             <div className="left">
                 <img
                     src="/images/primary/burger.svg"
@@ -55,7 +79,9 @@ export default Header
 const StyledHeader = styled.header`
     display: flex;
     align-items: center;
-    margin: 28px 0 28px auto;
+    justify-content: ${(props) =>
+        props.location ? 'space-between' : 'flex-start'};
+    margin: ${(props) => (props.location ? '28px 0' : '28px 0 28px auto')};
     .left {
         display: none;
     }
@@ -63,12 +89,30 @@ const StyledHeader = styled.header`
         display: flex;
         align-items: center;
     }
+    .btc {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .currency {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 36px;
+        }
+    }
     @media screen and (max-width: 1280px) {
         margin: 0 0 32px;
         padding: 0 40px;
         height: 56px;
         justify-content: space-between;
         box-shadow: 0px 1px 0px #e9ecf2;
+
+        .btc {
+            display: none;
+        }
 
         .adaptive {
             display: none;
