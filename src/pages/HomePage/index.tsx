@@ -32,13 +32,35 @@ import {
 } from './components/main'
 import { Pagination, Table, Title } from './components/bottom'
 import { useOnClickOutside } from '../../lib/useOnClickOutside'
+// import {
+//     getPythProgramKeyForCluster,
+//     PriceStatus,
+//     PythConnection,
+// } from '@pythnetwork/client'
 
 const Home = () => {
     let array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    const [show, setShow] = React.useState(false)
-    let ref = React.useRef()
+    const [show, setShow] = React.useState<boolean>(false)
+    let ref = React.useRef(null)
 
     useOnClickOutside(ref, () => setShow(false))
+
+    // const pythConnection = new PythConnection(
+    // solanaWeb3Connection,
+    // getPythProgramKeyForCluster(solanaClusterName)
+    // )
+    // pythConnection.onPriceChange((product, price) => {
+    // sample output:
+    // Crypto.SRM/USD: $8.68725 ±$0.0131 Status: Trading
+    //     console.log(
+    //         `${product.symbol}: $${price.price} \xB1$${
+    //             price.confidence
+    //         } Status: ${PriceStatus[price.status]}`
+    //     )
+    // })
+
+    // Start listening for price change events.
+    // pythConnection.start()
 
     return (
         <StyledHome>

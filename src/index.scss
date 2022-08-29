@@ -13,6 +13,7 @@ div {
 }
 
 .main_container { 
+    overflow: hidden;
     padding: 0 90px;
     display: flex;
     flex-direction: column;

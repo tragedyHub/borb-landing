@@ -103,7 +103,7 @@ const Buttons = styled.div`
     width: 100%;
 `
 
-const Button = styled.button`
+const Button = styled.button<{ red?: boolean }>`
     border-radius: 60px;
     height: 40px;
     width: 100%;
@@ -125,7 +125,7 @@ const Text = styled.div`
     font-weight: 400;
 `
 
-const Popup = styled.div`
+const Popup = styled.div<{ show?: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
