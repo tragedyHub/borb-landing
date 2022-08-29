@@ -33,6 +33,12 @@ div {
     }
 }
 
+.swiper {
+    @media screen and (max-width: 768px){
+        padding: 0 0 0 8px!important;
+    }
+}
+
 .App {
     display: grid;
     grid-template-columns: 240px 1fr;

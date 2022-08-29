@@ -24,14 +24,12 @@ const App = () => {
             <Nav isBurger={isBurger} setIsBurger={setIsBurger} />
             <div className="main_container">
                 <Header setIsBurger={setIsBurger} />
-                <div className="container">
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/supply" element={<SupplyPage />} />
-                        <Route path="/about" element={<AboutPage />} />
-                        <Route path="/earn" element={<EarnPage />} />
-                    </Routes>
-                </div>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/supply" element={<SupplyPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/earn" element={<EarnPage />} />
+                </Routes>
             </div>
             <Footer />
         </div>
