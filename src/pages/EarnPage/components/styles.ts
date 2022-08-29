@@ -1,11 +1,22 @@
 import styled from 'styled-components'
 
-const StyledEarn = styled.div``
+const StyledEarn = styled.div`
+
+    .container {
+        @media screen and (max-width: 768px) {
+            padding: 0;
+        }
+    }
+`
 
 const Title = styled.h4`
     font-weight: 600;
     font-size: 36px;
     line-height: 50px;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 16px;
+    }
 `
 
 const SubText = styled.p`
@@ -13,6 +24,10 @@ const SubText = styled.p`
     font-size: 14px;
     font-weight: 400;
     color: var(--grey60);
+
+    @media screen and (max-width: 768px) {
+        padding: 0 16px;
+    }
 `
 
 const Grid = styled.div`
@@ -75,9 +90,16 @@ const RewardTitle = styled.h6`
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 22px;
+    @media screen and (max-width: 768px) {
+        padding: 0 16px;
+    }
 `
 
-const TableGrid = styled.div``
+const TableGrid = styled.div`
+    @media screen and (max-width: 768px) {
+        padding: 0 16px;
+    }
+`
 
 const TableHead = styled.div``
 
