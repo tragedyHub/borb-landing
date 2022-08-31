@@ -150,6 +150,8 @@ const PopupContent = styled.div`
     width: 600px;
     border-radius: 16px;
     margin-top: auto;
+    background: ${(props) => props.theme.backgroundContent};
+
     @media screen and (max-width: 768px) {
         width: 90vw;
         height: 90vh;
@@ -169,10 +171,11 @@ const Head = styled.div`
 const PopupTitle = styled.h4`
     font-size: 24px;
     font-weight: 600;
+    color: ${(props) => props.theme.arrowBackgroundColor};
 `
 const PopupBottom = styled.div`
+    background: ${(props) => props.theme.inputDisabledBorderColor};
     margin-top: 32px;
-    background: #f6f8fc;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 32px;
@@ -208,6 +211,7 @@ const Column = styled.div`
         margin-top: 4px;
         font-weight: 600;
         font-size: 16px;
+        color: ${(props) => props.theme.arrowBackgroundColor};
     }
     @media screen and (max-width: 480px) {
         &:nth-child(1) {
