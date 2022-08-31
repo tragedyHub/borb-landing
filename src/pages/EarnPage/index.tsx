@@ -1,13 +1,15 @@
 import React, { useMemo, useRef } from 'react'
 import styled from 'styled-components'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Faq } from '../../components/Faq'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
 import {
+    AdaptiveTable,
     Card,
     CardContentText,
     CardSubLink,
-    Grid,
     Item,
+    Pagination,
     RewardTitle,
     Row,
     RowText,
@@ -134,6 +136,36 @@ const EarnPage = () => {
                         </Item>
                     </TableRow>
                 </TableGrid>
+                <AdaptiveTable>
+                    <div className="titles">
+                        <p>Wallet address</p>
+                        <p>Reward earned</p>
+                    </div>
+                    <div className="content">
+                        {Array(10)
+                            .fill('')
+                            .map((item) => (
+                                <div className="row">
+                                    <div className="left">
+                                        <p>0x24e78dvb8ybsalUGHG…</p>
+                                        <span>USDC</span>
+                                    </div>
+                                    <p className="cost">$23</p>
+                                </div>
+                            ))}
+                    </div>
+                </AdaptiveTable>
+                <Pagination>
+                    <img src="/images/earn/earn_pagination.svg" alt="" />
+                    <img
+                        src="/images/earn/earn_pagination.svg"
+                        alt=""
+                        style={{ transform: 'rotate(180deg)' }}
+                    />
+                </Pagination>
+                <div className="faq">
+                    <Faq />
+                </div>
             </div>
         </StyledEarn>
     )

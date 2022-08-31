@@ -7,7 +7,9 @@ const StyledAbout = styled.div`
 const Title = styled.h5`
     margin-bottom: 24px;
     font-weight: 600;
+    color: ${(props) => props.theme.arrowBackgroundColor};
     font-size: 36px;
+    
     @media screen and (max-width: 1000px) { 
         margin-bottom: 16px;
     }
@@ -16,6 +18,7 @@ const Title = styled.h5`
 const Text = styled.p`
     font-size: 16px;
     font-weight: 400;
+    color: ${(props) => props.theme.arrowBackgroundColor};
 `
 
 const AboutLink = styled.div`
@@ -30,12 +33,14 @@ const Headline = styled.p`
     margin-bottom: 24px;
     font-weight: 600;
     font-size: 24px;
+    color: ${(props) => props.theme.arrowBackgroundColor};
 `
 
 const SubTitle = styled.p`
     margin: 40px 0 8px;
     font-weight: 600;
     font-size: 16px;
+    color: ${(props) => props.theme.arrowBackgroundColor};
 `
 
 const Small = styled.p`

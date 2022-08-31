@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 const StyledHome = styled.div`
-    display: flex;
-    flex-direction: column;
     margin-bottom: 48px;
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
 
     .btc {
         display: none;
@@ -18,9 +20,14 @@ const StyledHome = styled.div`
         h4 {
             font-weight: 600;
             font-size: 36px;
+            color: ${(props) => props.theme.arrowBackgroundColor};
+        }
+        path {
+            fill: ${(props) => props.theme.arrowBackgroundColor};
         }
     }
     @media screen and (max-width: 1280px) {
+        margin-bottom: 24px;
         .btc {
             display: flex;
         }
@@ -36,6 +43,15 @@ const StyledHome = styled.div`
             h4 {
                 font-size: 32px;
             }
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .container {
+            padding: 0;
+        }
+        .btc,
+        .tab_container {
+            padding: 0 16px;
         }
     }
 `
@@ -55,7 +71,7 @@ const Left = styled.div``
 
 const Right = styled.div`
     padding: 24px;
-    background: var(--grey99);
+    background: ${(props) => props.theme.inputWrapperDisabledColor};
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -63,6 +79,9 @@ const Right = styled.div`
     text-align: center;
     @media screen and (max-width: 1000px) {
         padding: 32px 0 40px;
+    }
+    @media screen and (max-width: 480px) {
+        padding: 32px 16px 40px;
     }
 `
 
@@ -94,6 +113,7 @@ const Card = styled.div`
     background: #e9ecf2;
     border-radius: 80px;
     cursor: pointer;
+    background: ${(props) => props.theme.homePageButton};
 `
 
 const Buttons = styled.div`
@@ -143,6 +163,8 @@ const PopupContent = styled.div`
     width: 600px;
     border-radius: 16px;
     margin-top: auto;
+    background: ${(props) => props.theme.backgroundContent};
+
     @media screen and (max-width: 768px) {
         width: 90vw;
         height: 90vh;
@@ -162,10 +184,11 @@ const Head = styled.div`
 const PopupTitle = styled.h4`
     font-size: 24px;
     font-weight: 600;
+    color: ${(props) => props.theme.arrowBackgroundColor};
 `
 const PopupBottom = styled.div`
+    background: ${(props) => props.theme.inputDisabledBorderColor};
     margin-top: 32px;
-    background: #f6f8fc;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 32px;
@@ -201,6 +224,7 @@ const Column = styled.div`
         margin-top: 4px;
         font-weight: 600;
         font-size: 16px;
+        color: ${(props) => props.theme.arrowBackgroundColor};
     }
     @media screen and (max-width: 480px) {
         &:nth-child(1) {

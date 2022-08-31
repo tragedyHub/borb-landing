@@ -9,102 +9,111 @@ const SupplyPage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)')
 
     return (
-        <div className="container">
-            <Title>Supply crypto and earn interest</Title>
-            <Subtitle>
-                Supply your tokens and get Token+ while earning interest
-            </Subtitle>
-            <TabContainer>
-                <Tab active>
-                    <span>Supply</span>
-                </Tab>
-                <Tab>
-                    <span>Withdraw</span>
-                </Tab>
-            </TabContainer>
-            <InputContainer>
-                <InputWrapper>
-                    <TitleContainer>
-                        <SettingsTitle margin="9px">Supply</SettingsTitle>
-                        {isMobile && (
-                            <SettingsTitle>Balance: 263</SettingsTitle>
-                        )}
-                    </TitleContainer>
-                    <div className="input-wrapper">
-                        <SelectWrapper>
-                            <CurrencyWrapper>
-                                <USDCIcon />
-                            </CurrencyWrapper>
-                            <span>USTC</span>
-                            <ArrowIcon />
-                        </SelectWrapper>
-                        <input
-                            type="number"
-                            className="input"
-                            placeholder="Amount"
-                        />
-                    </div>
-                </InputWrapper>
-                <InputWrapper disabled>
-                    <SettingsTitle margin="9px">Receive</SettingsTitle>
+        <StyledSupply>
+            <div className="container">
+                <Title>Supply crypto and earn interest</Title>
+                <Subtitle>
+                    Supply your tokens and get Token+ while earning interest
+                </Subtitle>
+                <TabContainer>
+                    <Tab active>
+                        <span>Supply</span>
+                    </Tab>
+                    <Tab>
+                        <span>Withdraw</span>
+                    </Tab>
+                </TabContainer>
+                <InputContainer>
+                    <InputWrapper>
+                        <TitleContainer>
+                            <SettingsTitle margin="9px">Supply</SettingsTitle>
+                            {isMobile && (
+                                <SettingsTitle>Balance: 263</SettingsTitle>
+                            )}
+                        </TitleContainer>
+                        <div className="input-wrapper">
+                            <SelectWrapper>
+                                <CurrencyWrapper>
+                                    <USDCIcon />
+                                </CurrencyWrapper>
+                                <span>USTC</span>
+                                <ArrowIcon />
+                            </SelectWrapper>
+                            <input
+                                type="number"
+                                className="input"
+                                placeholder="Amount"
+                            />
+                        </div>
+                    </InputWrapper>
+                    <InputWrapper disabled>
+                        <SettingsTitle margin="9px">Receive</SettingsTitle>
 
-                    <div className="input-wrapper">
-                        <SelectWrapper>
-                            <CurrencyWrapper>
-                                <USDCIcon />
-                            </CurrencyWrapper>
-                            <span>USTC+</span>
-                        </SelectWrapper>
-                        <input
-                            type="number"
-                            className="input"
-                            disabled
-                            value={0}
-                        />
-                    </div>
-                </InputWrapper>
-            </InputContainer>
-            {!isMobile && (
-                <SettingsTitle margin="24px">Balance: 263</SettingsTitle>
-            )}
-            <Btn>Supply USDC</Btn>
-            <PurchaseWrapper>
-                <PurchaseDataList>
-                    <PurchaseDataItem>
-                        <SettingsTitle>Exchange rate:</SettingsTitle>
-                    </PurchaseDataItem>
-                    <PurchaseDataItem>
-                        <SettingsTitle>Deposit fee:</SettingsTitle>
-                    </PurchaseDataItem>
-                    <PurchaseDataItem>
-                        <SettingsTitle>Projected APY:</SettingsTitle>
-                    </PurchaseDataItem>
-                </PurchaseDataList>
-                <PurchaseDataList>
-                    <PurchaseDataItem>
-                        <SettingsTitle>
-                            1USDC=1USDC+
-                            <InfoIcon />
-                        </SettingsTitle>
-                    </PurchaseDataItem>
-                    <PurchaseDataItem>
-                        <SettingsTitle>
-                            0%
-                            <InfoIcon />
-                        </SettingsTitle>
-                    </PurchaseDataItem>
-                    <PurchaseDataItem>
-                        <SettingsTitle>
-                            5.79%
-                            <InfoIcon />
-                        </SettingsTitle>
-                    </PurchaseDataItem>
-                </PurchaseDataList>
-            </PurchaseWrapper>
-            <Faq />
-        </div>
+                        <div className="input-wrapper">
+                            <SelectWrapper>
+                                <CurrencyWrapper>
+                                    <USDCIcon />
+                                </CurrencyWrapper>
+                                <span>USTC+</span>
+                            </SelectWrapper>
+                            <input
+                                type="number"
+                                className="input"
+                                disabled
+                                value={0}
+                            />
+                        </div>
+                    </InputWrapper>
+                </InputContainer>
+                {!isMobile && (
+                    <SettingsTitle margin="24px">Balance: 263</SettingsTitle>
+                )}
+                <Btn>Supply USDC</Btn>
+                <PurchaseWrapper>
+                    <PurchaseDataList>
+                        <PurchaseDataItem>
+                            <SettingsTitle>Exchange rate:</SettingsTitle>
+                        </PurchaseDataItem>
+                        <PurchaseDataItem>
+                            <SettingsTitle>Deposit fee:</SettingsTitle>
+                        </PurchaseDataItem>
+                        <PurchaseDataItem>
+                            <SettingsTitle>Projected APY:</SettingsTitle>
+                        </PurchaseDataItem>
+                    </PurchaseDataList>
+                    <PurchaseDataList>
+                        <PurchaseDataItem>
+                            <SettingsTitle>
+                                1USDC=1USDC+
+                                <InfoIcon />
+                            </SettingsTitle>
+                        </PurchaseDataItem>
+                        <PurchaseDataItem>
+                            <SettingsTitle>
+                                0%
+                                <InfoIcon />
+                            </SettingsTitle>
+                        </PurchaseDataItem>
+                        <PurchaseDataItem>
+                            <SettingsTitle>
+                                5.79%
+                                <InfoIcon />
+                            </SettingsTitle>
+                        </PurchaseDataItem>
+                    </PurchaseDataList>
+                </PurchaseWrapper>
+                <Faq />
+            </div>
+        </StyledSupply>
     )
 }
+
+const StyledSupply = styled.div`
+    margin-bottom: 60px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 48px;
+    }
+`
 
 const Title = styled.h1`
     font-family: 'Inter';
@@ -153,11 +162,17 @@ export const TabContainer = styled.div`
         height: 1px;
         background-color: ${(props) => props.theme.tabBorderColor};
     }
+
+    @media screen and (max-width: 480px) {
+        gap: 0;
+        justify-content: space-between;
+    }
 `
 
 export const Tab = styled.div<{ active?: boolean }>`
     padding: 8px 4px;
     position: relative;
+    cursor: pointer;
 
     border-bottom: ${(props) =>
         props.active ? '2px solid #3fe7be' : '2px solid transparent'};
@@ -245,8 +260,9 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
         font-family: 'Inter';
         font-weight: 400;
         font-size: 21px;
-        color: #c2c5cc;
+        color: var(--grey80);
         text-align: right;
+        width: 100%;
 
         margin-left: auto;
         outline: none;
@@ -291,6 +307,9 @@ export const SelectWrapper = styled.div`
         font-size: 14px;
         line-height: 140%;
         color: ${(props) => props.theme.selectColor};
+    }
+    path {
+        fill: ${(props) => props.theme.arrowBackgroundColor};
     }
 `
 
