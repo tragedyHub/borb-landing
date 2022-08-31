@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 const StyledHome = styled.div`
-    display: flex;
-    flex-direction: column;
     margin-bottom: 48px;
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
 
     .btc {
         display: none;
@@ -18,6 +20,10 @@ const StyledHome = styled.div`
         h4 {
             font-weight: 600;
             font-size: 36px;
+            color: ${(props) => props.theme.arrowBackgroundColor};
+        }
+        path {
+            fill: ${(props) => props.theme.arrowBackgroundColor};
         }
     }
     @media screen and (max-width: 1280px) {
@@ -55,7 +61,7 @@ const Left = styled.div``
 
 const Right = styled.div`
     padding: 24px;
-    background: var(--grey99);
+    background: ${(props) => props.theme.inputWrapperDisabledColor};
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -94,6 +100,7 @@ const Card = styled.div`
     background: #e9ecf2;
     border-radius: 80px;
     cursor: pointer;
+    background: ${(props) => props.theme.homePageButton};
 `
 
 const Buttons = styled.div`

@@ -20,13 +20,15 @@ const StyledFooter = styled.footer`
     height: 72px;
     display: none;
     align-items: center;
-    box-shadow: 0px -1px 0px #e9ecf2;
+    box-shadow: 0px -1px 0px ${(props) => props.theme.borderColor};
+    background: ${(props) => props.theme.backgroundContent};
     p {
         color: var(--grey80);
         margin-left: 24px;
         font-size: 12px;
     }
     img {
+        cursor: pointer;
         &:not(:last-child) {
             margin-right: 16px;
         }

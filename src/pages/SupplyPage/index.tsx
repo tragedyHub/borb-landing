@@ -245,7 +245,7 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
         font-family: 'Inter';
         font-weight: 400;
         font-size: 21px;
-        color: #c2c5cc;
+        color: var(--grey80);
         text-align: right;
 
         margin-left: auto;
@@ -288,6 +288,9 @@ export const SelectWrapper = styled.div`
         font-size: 14px;
         line-height: 140%;
         color: ${(props) => props.theme.selectColor};
+    }
+    path {
+        fill: ${(props) => props.theme.arrowBackgroundColor};
     }
 `
 

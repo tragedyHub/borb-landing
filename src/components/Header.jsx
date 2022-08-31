@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Header = (props) => {
@@ -24,27 +25,44 @@ const Header = (props) => {
                         className="currency"
                     />
                     <h4>BTC</h4>
-                    <img src="/images/primary/blackArrow.svg" alt="" />
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M12 15L7.5 9L16.5 9L12 15Z" fill="#23272B" />
+                    </svg>
                 </div>
             )}
 
             <div className="left">
-                <img
-                    src="/images/primary/burger.svg"
-                    alt=""
+                <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                     style={{ cursor: 'pointer' }}
                     onClick={() => props.setIsBurger(true)}
-                />
-                <div className="logo">
-                    <img src="/images/primary/Logo.png" alt="" />
-                    <p>BorB</p>
-                </div>
+                >
+                    <rect y="9" width="10" height="2" rx="1" fill="#23272B" />
+                    <rect y="1" width="20" height="2" rx="1" fill="#23272B" />
+                    <rect y="17" width="20" height="2" rx="1" fill="#23272B" />
+                </svg>
+                <NavLink to="/">
+                    <div className="logo">
+                        <img src="/images/primary/Logo.png" alt="" />
+                        <p>BorB</p>
+                    </div>
+                </NavLink>
             </div>
             <div className="right">
                 <img
                     src="/images/primary/moon.svg"
                     alt=""
-                    style={{ marginRight: '24px' }}
+                    style={{ marginRight: '24px', cursor: 'pointer' }}
                     onClick={props.changeTheme}
                 />
                 <img
@@ -102,6 +120,10 @@ const StyledHeader = styled.header`
         h4 {
             font-weight: 600;
             font-size: 36px;
+            color: ${(props) => props.theme.arrowBackgroundColor};
+        }
+        path {
+            fill: ${(props) => props.theme.arrowBackgroundColor};
         }
     }
     @media screen and (max-width: 1280px) {
@@ -109,7 +131,7 @@ const StyledHeader = styled.header`
         padding: 0 40px;
         height: 56px;
         justify-content: space-between;
-        box-shadow: 0px 1px 0px #e9ecf2;
+        box-shadow: 0px 1px 0px ${(props) => props.theme.borderColor};
 
         .btc {
             display: none;
@@ -125,6 +147,10 @@ const StyledHeader = styled.header`
         .left {
             display: flex;
             align-items: center;
+
+            rect {
+                fill: ${(props) => props.theme.arrowBackgroundColor};
+            }
         }
         .logo {
             display: flex;
@@ -134,6 +160,7 @@ const StyledHeader = styled.header`
                 margin-left: 7px;
                 font-weight: 600;
                 font-size: 24px;
+                color: ${(props) => props.theme.arrowBackgroundColor};
             }
         }
     }
@@ -150,15 +177,22 @@ const Line = styled.div`
     width: 1px;
     background: var(--grey95);
     margin: 0 24px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 const AccountName = styled.p`
     max-width: 90px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: ${(props) => props.theme.arrowBackgroundColor};
     margin-right: 12px;
     font-weight: 400;
     font-size: 14px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 
 const Wallet = styled.div`
@@ -169,4 +203,7 @@ const Wallet = styled.div`
     display: grid;
     place-content: center;
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+        margin-left: 20px;
+    }
 `

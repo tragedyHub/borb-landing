@@ -36,7 +36,7 @@ const Nav = (props) => {
                         </svg>
                         <p>Default Light</p>
                     </StyledLink>
-                    <NavLink to="/earn">
+                    <NavLink to="/earn" onClick={() => props.isBurger(false)}>
                         <svg
                             width="20"
                             height="20"
@@ -54,7 +54,7 @@ const Nav = (props) => {
 
                         <p>Earn</p>
                     </NavLink>
-                    <NavLink to="/supply">
+                    <NavLink to="/supply" onClick={() => props.isBurger(false)}>
                         <svg
                             width="20"
                             height="20"
@@ -75,7 +75,10 @@ const Nav = (props) => {
                 </Block>
                 <Block>
                     <Title>Support</Title>
-                    <NavLink to="/messages">
+                    <NavLink
+                        to="/messages"
+                        onClick={() => props.isBurger(false)}
+                    >
                         <svg
                             width="20"
                             height="20"
@@ -93,7 +96,10 @@ const Nav = (props) => {
 
                         <p>Messages</p>
                     </NavLink>
-                    <NavLink to="/settings">
+                    <NavLink
+                        to="/settings"
+                        onClick={() => props.isBurger(false)}
+                    >
                         <svg
                             width="20"
                             height="20"
@@ -277,10 +283,12 @@ const StyledNav = styled.div`
     flex-direction: column;
     min-height: 100vh;
     padding-bottom: 24px;
-    background: #ffffff;
+    background: ${(props) => props.theme.navbarBg};
     box-shadow: 6px 0px 16px rgba(10, 31, 51, 0.05);
     transition: 0.5s all ease;
+    transform: translateX(0);
     @media screen and (max-width: 1280px) {
+        padding-top: 24px;
         padding-bottom: 32px;
         width: 240px;
         position: fixed;
@@ -364,6 +372,7 @@ const Logo = styled.div`
         margin-left: 8px;
         font-weight: 600;
         font-size: 24px;
+        color: ${(props) => props.theme.faqColor};
     }
     @media screen and (max-width: 1280px) {
         display: none;
@@ -397,27 +406,30 @@ const StyledLink = styled.div`
         margin-left: 8px;
     }
 
-        &:hover {
+    &:hover {
+        transition: 0.2s all ease;
+        background: #f6f8fc;
+        border-radius: 8px;
+        path {
+            stroke: ${(props) => (props.stroke ? 'var(--black)' : 'none')};
+            fill: ${(props) => (props.stroke ? 'none' : 'var(--black)')};
             transition: 0.2s all ease;
-            background: #f6f8fc;
-            border-radius: 8px;
-            path {
-                stroke: ${(props) => (props.stroke ? 'var(--black)' : 'none')};
-                fill: ${(props) => (props.stroke ? 'none' : 'var(--black)')};
-                transition: 0.2s all ease;
-            }
-            p {
-                color: var(--black);
-                font-weight: 600;
-                transition: 0.2s all ease;
-            }
         }
+        p {
+            color: var(--black);
+            font-weight: 600;
+            transition: 0.2s all ease;
+        }
+    }
 `
 
 const Bottom = styled.div`
     margin-top: auto;
     padding-top: 28px;
-    border-top: 1px solid var(--grey95);
+    border-top: 1px solid ${(props) => props.theme.borderColor};
+    p {
+        color: ${(props) => props.theme.navbarBottom};
+    }
 
     @media screen and (max-width: 1280px) {
         display: none;
@@ -436,6 +448,9 @@ const Icons = styled.div`
     }
     svg:not(:last-child) {
         margin-right: 12px;
+    }
+    path {
+        fill: ${(props) => props.theme.navbarBottom};
     }
 `
 
@@ -461,6 +476,6 @@ const BottomText = styled.p`
 const Line = styled.div`
     height: 15px;
     width: 1px;
-    background: var(--grey80);
+    background: ${(props) => props.theme.navbarBottom};
     margin: 0 7px;
 `

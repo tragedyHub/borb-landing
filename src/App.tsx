@@ -15,10 +15,12 @@ import isEqual from 'lodash.isequal'
 export const lightTheme = {
     backgroundContent: '#ffffff',
     titleColor: '#23272B',
+    borderColor: '#e9ecf2',
     subtitleColor: ' #8A8F99',
     tabBorderColor: '#E9ECF2',
     selectColor: '#23272B',
     inputPlaceholderColor: '#C2C5CC',
+    navbarBg: '#fff',
 
     inputWrapperColor: '#ffffff',
     inputWrapperDisabledColor: '#F6F8FC',
@@ -31,17 +33,21 @@ export const lightTheme = {
     faqColor: '#23272B',
 
     faqBorderColor: '#E9ECF2',
-
     faqCrossColor: '#23272B',
+    homePageButton: '#E9ECF2',
+
+    navbarBottom: '#C2C5CC',
 }
 
 export const darkTheme = {
     backgroundContent: '#23272B',
+    borderColor: '#3D424D',
     titleColor: '#F6F8FC',
     subtitleColor: '#8A8F99',
     tabBorderColor: '#3D424D',
     selectColor: '#F6F8FC',
     inputPlaceholderColor: '#8A8F99',
+    navbarBg: '#16191C',
 
     inputWrapperColor: '#16191C',
 
@@ -55,8 +61,9 @@ export const darkTheme = {
     faqColor: '#F6F8FC',
 
     faqBorderColor: '#3D424D',
-
     faqCrossColor: '#8A8F99',
+    homePageButton: '#3D424D',
+    navbarBottom: '#3D424D',
 }
 
 const App = () => {

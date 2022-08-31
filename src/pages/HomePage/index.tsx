@@ -4,7 +4,6 @@ import {
     CurrencyWrapper,
     InputWrapper,
     SelectWrapper,
-    SettingsTitle,
     Tab,
     TabContainer,
 } from '../SupplyPage'
@@ -72,7 +71,15 @@ const Home = () => {
                         className="currency"
                     />
                     <h4>BTC</h4>
-                    <img src="/images/primary/blackArrow.svg" alt="" />
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M12 15L7.5 9L16.5 9L12 15Z" fill="#23272B" />
+                    </svg>
                 </div>
                 <Row>
                     <Left></Left>
@@ -80,16 +87,25 @@ const Home = () => {
                         <div className="content">
                             <Counter>86%</Counter>
                             <InputWrapper>
-                                <SettingsTitle margin="9px">
-                                    Supply
-                                </SettingsTitle>
                                 <div className="input-wrapper">
                                     <SelectWrapper>
                                         <CurrencyWrapper>
                                             <USDCIcon />
                                         </CurrencyWrapper>
                                         <span>USTC</span>
-                                        <ArrowIcon />
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            className="arrow"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M8 10L5 6L11 6L8 10Z"
+                                                fill="#23272B"
+                                            />
+                                        </svg>
                                     </SelectWrapper>
                                     <input
                                         type="number"
