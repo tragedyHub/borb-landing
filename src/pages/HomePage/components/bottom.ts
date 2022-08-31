@@ -21,6 +21,9 @@ const Pagination = styled.div`
         align-items: center;
         width: 100%;
     }
+    @media screen and (max-width: 480px) {
+        padding: 0 16px;
+    }
 `
 
 const Table = styled.table`
