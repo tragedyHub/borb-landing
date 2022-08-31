@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 import EarnPage from './pages/EarnPage'
 import HomePage from './pages/HomePage'
 import { SupplyPage } from './pages/SupplyPage'
+import axios from 'axios'
 
 //@ts-ignore
 import isEqual from 'lodash.isequal'
@@ -59,7 +60,9 @@ export const darkTheme = {
 const App = () => {
     const [isBurger, setIsBurger] = useState(false)
 
-    const [appTheme, setAppTheme] = useState(lightTheme)
+    const [appTheme, setAppTheme] = useState(
+        localStorage.getItem('appTheme') === 'light' ? lightTheme : darkTheme
+    )
 
     const appRef = useRef<HTMLDivElement | null>(null)
 
@@ -74,6 +77,13 @@ const App = () => {
 
         appRef?.current?.classList.remove('App_active')
     }, [isBurger])
+
+    useEffect(() => {
+        localStorage.setItem(
+            'appTheme',
+            appTheme.backgroundContent === '#ffffff' ? 'light' : 'dark'
+        )
+    }, [appTheme])
 
     return (
         <ThemeProvider theme={appTheme}>

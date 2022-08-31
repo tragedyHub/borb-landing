@@ -191,7 +191,8 @@ const StyledHeader = styled.header`
             display: none;
             position: absolute;
         }
-        img {
+        img,
+        svg {
             margin: 0 !important;
         }
         .left {
