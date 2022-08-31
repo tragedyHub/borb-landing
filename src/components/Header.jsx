@@ -59,12 +59,23 @@ const Header = (props) => {
                 </NavLink>
             </div>
             <div className="right">
-                <img
-                    src="/images/primary/moon.svg"
-                    alt=""
-                    style={{ marginRight: '24px', cursor: 'pointer' }}
-                    onClick={props.changeTheme}
-                />
+                {props.theme === 'light' && (
+                    <img
+                        src="/images/primary/moon.svg"
+                        alt=""
+                        style={{ marginRight: '24px', cursor: 'pointer' }}
+                        onClick={props.changeTheme}
+                    />
+                )}
+                {props.theme === 'dark' && (
+                    <img
+                        src="/images/primary/sun.svg"
+                        alt=""
+                        style={{ marginRight: '24px', cursor: 'pointer' }}
+                        onClick={props.changeTheme}
+                    />
+                )}
+
                 <img
                     src="/images/primary/language.svg"
                     alt=""
@@ -175,7 +186,7 @@ const StyledHeader = styled.header`
 const Line = styled.div`
     height: 20px;
     width: 1px;
-    background: var(--grey95);
+    background: ${(props) => props.theme.walletBorder};
     margin: 0 24px;
     @media screen and (max-width: 768px) {
         display: none;
@@ -199,7 +210,7 @@ const Wallet = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid var(--grey95);
+    border: 1px solid ${(props) => props.theme.walletBorder};
     display: grid;
     place-content: center;
     cursor: pointer;

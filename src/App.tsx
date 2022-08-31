@@ -37,6 +37,7 @@ export const lightTheme = {
     homePageButton: '#E9ECF2',
 
     navbarBottom: '#C2C5CC',
+    walletBorder: '#E9ECF2',
 }
 
 export const darkTheme = {
@@ -64,6 +65,7 @@ export const darkTheme = {
     faqCrossColor: '#8A8F99',
     homePageButton: '#3D424D',
     navbarBottom: '#3D424D',
+    walletBorder: '#3D424D',
 }
 
 const App = () => {
@@ -91,6 +93,11 @@ const App = () => {
                 <Nav isBurger={isBurger} setIsBurger={setIsBurger} />
                 <MainContainer>
                     <Header
+                        theme={
+                            appTheme.backgroundContent === '#ffffff'
+                                ? 'light'
+                                : 'dark'
+                        }
                         setIsBurger={setIsBurger}
                         changeTheme={changeTheme}
                     />
