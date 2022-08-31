@@ -93,6 +93,10 @@ const SmallCardContent = styled.p`
     font-size: 16px;
     margin-top: 16px;
     margin-bottom: 36px;
+    max-width: 231px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     color: ${(props) => props.theme.arrowBackgroundColor};
 `
 
