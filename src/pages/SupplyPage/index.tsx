@@ -263,6 +263,9 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
 
     @media screen and (max-width: 786px) {
         width: 100%;
+        .input {
+            width: 100%;
+        }
     }
 `
 
