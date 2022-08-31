@@ -159,20 +159,21 @@ const Home = () => {
                     </Right>
                 </Row>
                 <Title>Trade</Title>
-                <TabContainer>
-                    <Tab active>
-                        <span>Active</span>
-                    </Tab>
-                    <Tab>
-                        <span>Closed</span>
-                    </Tab>
-                    <Tab>
-                        <span>
-                            Uncollected <h3>3</h3>
-                        </span>
-                    </Tab>
-                </TabContainer>
-
+                <div className="tab_container">
+                    <TabContainer>
+                        <Tab active>
+                            <span>Active</span>
+                        </Tab>
+                        <Tab>
+                            <span>Closed</span>
+                        </Tab>
+                        <Tab>
+                            <span>
+                                Uncollected <h3>3</h3>
+                            </span>
+                        </Tab>
+                    </TabContainer>
+                </div>
                 <Table>
                     <thead>
                         <tr>

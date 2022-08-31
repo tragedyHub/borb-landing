@@ -99,14 +99,12 @@ const App = () => {
                         setIsBurger={setIsBurger}
                         changeTheme={changeTheme}
                     />
-                    <div className="container">
-                        <Routes>
-                            <Route path="/" element={<HomePage />} />
-                            <Route path="/supply" element={<SupplyPage />} />
-                            <Route path="/about" element={<AboutPage />} />
-                            <Route path="/earn" element={<EarnPage />} />
-                        </Routes>
-                    </div>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/supply" element={<SupplyPage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/earn" element={<EarnPage />} />
+                    </Routes>
                 </MainContainer>
                 <Footer />
             </div>

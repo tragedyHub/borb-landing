@@ -4,9 +4,11 @@ import styled from 'styled-components'
 const Footer = () => {
     return (
         <StyledFooter>
-            <img src="/images/primary/twitter.svg" alt="" />
-            <img src="/images/primary/github.svg" alt="" />
-            <img src="/images/primary/redit.svg" alt="" />
+            <div className="icons">
+                <img src="/images/primary/twitter.svg" alt="" />
+                <img src="/images/primary/github.svg" alt="" />
+                <img src="/images/primary/redit.svg" alt="" />
+            </div>
             <p>© 2022 BorB | Privacy Policy</p>
         </StyledFooter>
     )
@@ -38,5 +40,20 @@ const StyledFooter = styled.footer`
     }
     @media screen and (max-width: 1000px) {
         padding: 0 16px;
+    }
+    @media screen and (max-width: 480px) {
+        padding: 24px 16px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .icons { 
+            margin-bottom: 16px;
+        }
     }
 `

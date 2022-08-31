@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const StyledEarn = styled.div`
+    margin-bottom: 60px;
+
     .container {
         @media screen and (max-width: 768px) {
             padding: 0;
@@ -8,6 +10,9 @@ const StyledEarn = styled.div`
                 padding: 0 16px;
             }
         }
+    }
+    @media screen and (max-width:768px) {
+        margin-bottom: 48px;
     }
 `
 
@@ -105,6 +110,7 @@ const RewardTitle = styled.h6`
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 22px;
+    color: ${(props) => props.theme.arrowBackgroundColor};
     @media screen and (max-width: 768px) {
         padding: 0 16px;
         margin: 40px 0 24px;

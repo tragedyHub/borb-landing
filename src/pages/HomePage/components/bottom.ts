@@ -70,6 +70,9 @@ const Table = styled.table`
             display: inline-block;
         }
     }
+    @media screen and (max-width: 480px) {
+        padding: 0 16px;
+    }
 `
 
 export { Title, Pagination, Table }

@@ -27,6 +27,7 @@ const StyledHome = styled.div`
         }
     }
     @media screen and (max-width: 1280px) {
+        margin-bottom: 24px;
         .btc {
             display: flex;
         }
@@ -42,6 +43,15 @@ const StyledHome = styled.div`
             h4 {
                 font-size: 32px;
             }
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .container {
+            padding: 0;
+        }
+        .btc,
+        .tab_container {
+            padding: 0 16px;
         }
     }
 `
@@ -69,6 +79,9 @@ const Right = styled.div`
     text-align: center;
     @media screen and (max-width: 1000px) {
         padding: 32px 0 40px;
+    }
+    @media screen and (max-width: 480px) {
+        padding: 32px 16px 40px;
     }
 `
 
