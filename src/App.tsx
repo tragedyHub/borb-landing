@@ -21,21 +21,15 @@ export const lightTheme = {
     selectColor: '#23272B',
     inputPlaceholderColor: '#C2C5CC',
     navbarBg: '#fff',
-
     inputWrapperColor: '#ffffff',
     inputWrapperDisabledColor: '#F6F8FC',
-
     inputBorderColor: '#E9ECF2',
     inputDisabledBorderColor: '#F6F8FC',
-
     arrowBackgroundColor: '#23272B',
-
     faqColor: '#23272B',
-
     faqBorderColor: '#E9ECF2',
     faqCrossColor: '#23272B',
     homePageButton: '#E9ECF2',
-
     navbarBottom: '#C2C5CC',
     walletBorder: '#E9ECF2',
 }
@@ -49,18 +43,12 @@ export const darkTheme = {
     selectColor: '#F6F8FC',
     inputPlaceholderColor: '#8A8F99',
     navbarBg: '#16191C',
-
     inputWrapperColor: '#16191C',
-
     inputBorderColor: '#3D424D',
     inputDisabledBorderColor: '#30373C',
-
     inputWrapperDisabledColor: '#30373C',
-
     arrowBackgroundColor: '#F6F8FC',
-
     faqColor: '#F6F8FC',
-
     faqBorderColor: '#3D424D',
     faqCrossColor: '#8A8F99',
     homePageButton: '#3D424D',
