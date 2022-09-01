@@ -33,6 +33,8 @@ export const lightTheme = {
     homePageButton: '#E9ECF2',
     navbarBottom: '#C2C5CC',
     walletBorder: '#E9ECF2',
+    navbarHoverFill: '#23272B',
+    navbarHover: '#F6F8FC',
 }
 
 export const darkTheme = {
@@ -55,6 +57,8 @@ export const darkTheme = {
     homePageButton: '#3D424D',
     navbarBottom: '#3D424D',
     walletBorder: '#3D424D',
+    navbarHover: '#30373C',
+    navbarHoverFill: '#F6F8FC',
 }
 
 const App = () => {
