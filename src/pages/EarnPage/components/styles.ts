@@ -11,7 +11,7 @@ const StyledEarn = styled.div`
             }
         }
     }
-    @media screen and (max-width:768px) {
+    @media screen and (max-width: 768px) {
         margin-bottom: 48px;
     }
 `
@@ -20,7 +20,7 @@ const Title = styled.h4`
     font-weight: 600;
     font-size: 36px;
     line-height: 50px;
-
+    color: ${(props) => props.theme.arrowBackgroundColor};
     @media screen and (max-width: 768px) {
         padding: 0 16px;
         font-size: 32px;
@@ -163,7 +163,7 @@ const Pagination = styled.div`
         justify-content: space-between;
     }
     @media screen and (max-width: 768px) {
-        margin: 20px 0 40px;
+        margin: 20px 12px 40px;
     }
     img {
         cursor: pointer;
@@ -204,17 +204,20 @@ const AdaptiveTable = styled.div`
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
+            color: ${(props) => props.theme.arrowBackgroundColor};
         }
         span {
             margin-top: 4px;
             text-transform: uppercase;
             font-weight: 400;
             font-size: 14px;
+            color: ${(props) => props.theme.arrowBackgroundColor};
         }
     }
     .cost {
         font-weight: 400;
         font-size: 14px;
+        color: ${(props) => props.theme.arrowBackgroundColor};
     }
 `
 
