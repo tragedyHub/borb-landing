@@ -179,9 +179,9 @@ const Home = () => {
                         <tr>
                             <th className="first">Asset</th>
                             <th className="adaptive">Direction</th>
-                            <th>Open</th>
+                            <th className="th_open">Open</th>
                             <th>Close</th>
-                            <th>Chart</th>
+                            <th className="chart">Chart</th>
                             <th className="last">Result</th>
                         </tr>
                     </thead>
@@ -206,6 +206,7 @@ const Home = () => {
                                             fill="var(--green)"
                                         />
                                     </svg>
+                                    <span className="extra-price">$19,2587.45</span>
                                 </td>
                                 <td className="adaptive">
                                     <svg
@@ -221,9 +222,9 @@ const Home = () => {
                                         />
                                     </svg>
                                 </td>
-                                <td>$19,2587.45</td>
+                                <td className="td_price">$19,2587.45</td>
                                 <td>00:47</td>
-                                <td>
+                                <td className="chart_td">
                                     <img src="/images/home/Chart.png" alt="" />
                                 </td>
                                 <td className="green last">+266.454</td>
