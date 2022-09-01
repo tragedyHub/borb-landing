@@ -73,7 +73,12 @@ const App = () => {
     }
 
     useEffect(() => {
-        if (isBurger) return appRef?.current?.classList.add('App_active')
+        if (isBurger) {
+            document.body.style.overflow = 'hidden'
+            return appRef?.current?.classList.add('App_active')
+        } else { 
+            document.body.style.overflow = 'scroll'
+        }
 
         appRef?.current?.classList.remove('App_active')
     }, [isBurger])
