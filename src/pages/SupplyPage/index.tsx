@@ -147,12 +147,9 @@ const Subtitle = styled.p`
 
 export const TabContainer = styled.div`
     display: flex;
-
     position: relative;
     gap: 57px;
-
     margin-bottom: 30px;
-
     &::after {
         content: '';
         position: absolute;
@@ -161,6 +158,9 @@ export const TabContainer = styled.div`
         width: 100%;
         height: 1px;
         background-color: ${(props) => props.theme.tabBorderColor};
+    }
+    @media screen and (max-width: 768px) {
+        gap: 48px;
     }
 
     @media screen and (max-width: 480px) {

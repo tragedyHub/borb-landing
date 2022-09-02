@@ -127,6 +127,9 @@ const Button = styled.button<{ red?: boolean }>`
     border-radius: 60px;
     height: 40px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background: ${(props: any) => (props.red ? 'var(--pink)' : 'var(--green)')};
 `

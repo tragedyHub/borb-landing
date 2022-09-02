@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 import EarnPage from './pages/EarnPage'
 import HomePage from './pages/HomePage'
 import { SupplyPage } from './pages/SupplyPage'
+import { useLocation } from 'react-router'
 import axios from 'axios'
 
 //@ts-ignore
@@ -80,7 +81,7 @@ const App = () => {
         if (isBurger) {
             document.body.style.overflow = 'hidden'
             return appRef?.current?.classList.add('App_active')
-        } else { 
+        } else {
             document.body.style.overflow = 'scroll'
         }
 
@@ -93,12 +94,13 @@ const App = () => {
             appTheme.backgroundContent === '#ffffff' ? 'light' : 'dark'
         )
     }, [appTheme])
+    let location = useLocation()
 
     return (
         <ThemeProvider theme={appTheme}>
             <div className="App" id="app" ref={appRef}>
                 <Nav isBurger={isBurger} setIsBurger={setIsBurger} />
-                <MainContainer>
+                <MainContainer home={location.pathname === '/' ? true : false}>
                     <Header
                         theme={
                             appTheme.backgroundContent === '#ffffff'
@@ -121,9 +123,9 @@ const App = () => {
     )
 }
 
-const MainContainer = styled.div`
+const MainContainer = styled.div<{ home?: boolean }>`
     overflow: hidden;
-    padding: 0 90px;
+    padding: ${(props: any) => (props.home ? '58px' : '90px')};
     display: flex;
     flex-direction: column;
     height: 100%;
