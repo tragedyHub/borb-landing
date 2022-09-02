@@ -125,7 +125,7 @@ const App = () => {
 
 const MainContainer = styled.div<{ home?: boolean }>`
     overflow: hidden;
-    padding: ${(props: any) => (props.home ? '58px' : '90px')};
+    padding: ${(props: any) => (props.home ? '0 58px' : '0 90px')};
     display: flex;
     flex-direction: column;
     height: 100%;
