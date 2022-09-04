@@ -29,7 +29,7 @@ import {
     StyledHome,
     Text,
 } from './components/main'
-import { Pagination, Table, Title } from './components/bottom'
+import { Pagination, Title } from './components/bottom'
 import { useOnClickOutside } from '../../lib/useOnClickOutside'
 // import {
 //     getPythProgramKeyForCluster,
@@ -174,66 +174,7 @@ const Home = () => {
                         </Tab>
                     </TabContainer>
                 </div>
-                {/* <Table>
-                    <thead>
-                        <tr>
-                            <th className="first">Asset</th>
-                            <th className="adaptive">Direction</th>
-                            <th className="th_open">Open</th>
-                            <th>Close</th>
-                            <th className="chart">Chart</th>
-                            <th className="last">Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {array.map((item) => (
-                            <tr className="row">
-                                <td className="first_td">
-                                    <img
-                                        src="/images/home/bitcoin.svg"
-                                        alt=""
-                                    />
-                                    <svg
-                                        className="first_td_adaptive"
-                                        width="32"
-                                        height="32"
-                                        viewBox="0 0 32 32"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M16 12L22 20H10L16 12Z"
-                                            fill="var(--green)"
-                                        />
-                                    </svg>
-                                    <span className="extra-price">
-                                        $19,2587.45
-                                    </span>
-                                </td>
-                                <td className="adaptive">
-                                    <svg
-                                        width="32"
-                                        height="32"
-                                        viewBox="0 0 32 32"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M16 12L22 20H10L16 12Z"
-                                            fill="var(--green)"
-                                        />
-                                    </svg>
-                                </td>
-                                <td className="td_price">$19,2587.45</td>
-                                <td>00:47</td>
-                                <td className="chart_td">
-                                    <img src="/images/home/Chart.png" alt="" />
-                                </td>
-                                <td className="green last">+266.454</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table> */}
+
                 <DataTable>
                     <DataHeader>
                         <span className="center mobile-display-none">
