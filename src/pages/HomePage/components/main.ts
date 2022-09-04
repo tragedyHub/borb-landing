@@ -82,6 +82,7 @@ const Right = styled.div`
     }
     @media screen and (max-width: 480px) {
         padding: 32px 16px 40px;
+        border-radius: 0;
     }
 `
 
@@ -90,6 +91,11 @@ const Counter = styled.h4`
     color: var(--green);
     font-size: 60px;
     font-weight: 600;
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 20px;
+        font-size: 56px;
+    }
 `
 
 const Grid = styled.div`
@@ -101,6 +107,14 @@ const Grid = styled.div`
     grid-gap: 6px;
     margin-top: 24px;
     margin-bottom: 64px;
+
+    @media screen and (max-width: 1000px) {
+        margin-bottom: 48px;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 40px;
+    }
 `
 
 const Card = styled.div`
@@ -127,6 +141,9 @@ const Button = styled.button<{ red?: boolean }>`
     border-radius: 60px;
     height: 40px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     background: ${(props: any) => (props.red ? 'var(--pink)' : 'var(--green)')};
 `
