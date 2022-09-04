@@ -328,15 +328,17 @@ const StyledNav = styled.div`
 
         &:hover {
             transition: 0.2s all ease;
-            background: #f6f8fc;
+            background: ${(props) => props.theme.navbarHover};
             border-radius: 8px;
             path {
-                stroke: ${(props) => (props.stroke ? 'var(--black)' : 'none')};
-                fill: ${(props) => (props.stroke ? 'none' : 'var(--black)')};
+                stroke: ${(props) =>
+                    props.stroke ? props.theme.navbarHoverFill : 'none'};
+                fill: ${(props) =>
+                    props.stroke ? 'none' : props.theme.navbarHoverFill};
                 transition: 0.2s all ease;
             }
             p {
-                color: var(--black);
+                color: ${(props) => props.theme.navbarHoverFill};
                 font-weight: 600;
                 transition: 0.2s all ease;
             }
@@ -408,15 +410,17 @@ const StyledLink = styled.div`
 
     &:hover {
         transition: 0.2s all ease;
-        background: #f6f8fc;
+        background: ${(props) => props.theme.navbarHover};
         border-radius: 8px;
         path {
-            stroke: ${(props) => (props.stroke ? 'var(--black)' : 'none')};
-            fill: ${(props) => (props.stroke ? 'none' : 'var(--black)')};
+            stroke: ${(props) =>
+                props.stroke ? props.theme.navbarHoverFill : 'none'};
+            fill: ${(props) =>
+                props.stroke ? 'none' : props.theme.navbarHoverFill};
             transition: 0.2s all ease;
         }
         p {
-            color: var(--black);
+            color: ${(props) => props.theme.navbarHoverFill};
             font-weight: 600;
             transition: 0.2s all ease;
         }
