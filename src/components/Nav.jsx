@@ -34,7 +34,7 @@ const Nav = (props) => {
                                 stroke-linejoin="round"
                             />
                         </svg>
-                        <p>Default Light</p>
+                        <p>Trade</p>
                     </StyledLink>
                     <NavLink to="/earn" onClick={() => props.isBurger(false)}>
                         <svg
