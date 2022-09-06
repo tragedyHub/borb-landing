@@ -4,9 +4,25 @@ import { ReactComponent as USDCIcon } from '../../assets/usdc-icon.svg'
 import { ReactComponent as Arrow } from '../../assets/arrow-down-icon.svg'
 import { Faq } from '../../components/Faq'
 import { useMediaQuery } from '../../hooks/useMediaQuery'
-
+import { useRef, useState } from 'react'
+import { SelectBody } from '../HomePage'
+import { useOnClickOutside } from '../../lib/useOnClickOutside'
+let data = [
+    {
+        name: 'usdt',
+        img: '/images/earn/usdt_logo.svg',
+    },
+    {
+        name: 'usdc',
+        img: '/images/earn/usdc_logo.svg',
+    },
+]
 const SupplyPage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)')
+    const [popup, setPopup] = useState(false)
+    const [itemId, setItemId] = useState(0)
+    const reff = useRef(null)
+    useOnClickOutside(reff, () => setPopup(false))
 
     return (
         <StyledSupply>
@@ -32,13 +48,46 @@ const SupplyPage = () => {
                             )}
                         </TitleContainer>
                         <div className="input-wrapper">
-                            <SelectWrapper>
+                            <SelectWrapper
+                                onClick={() => {
+                                    setPopup(true)
+                                }}
+                            >
                                 <CurrencyWrapper>
-                                    <USDCIcon />
+                                    <img src={data[itemId].img} alt="" />
                                 </CurrencyWrapper>
-                                <span>USTC</span>
-                                <ArrowIcon />
+                                <span>{data[itemId].name}</span>
+                                <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    className="arrow"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M8 10L5 6L11 6L8 10Z"
+                                        fill="#23272B"
+                                    />
+                                </svg>
                             </SelectWrapper>
+                            {popup && (
+                                <SelectBody ref={reff}>
+                                    {data.map((item, index) => (
+                                        <div
+                                            className="select_card"
+                                            onClick={() => {
+                                                setItemId(index)
+                                                setPopup(false)
+                                            }}
+                                        >
+                                            <img src={item.img} alt="" />
+                                            <p>{item.name}</p>
+                                        </div>
+                                    ))}
+                                </SelectBody>
+                            )}
+
                             <input
                                 type="number"
                                 className="input"
@@ -110,6 +159,9 @@ const SupplyPage = () => {
 
 const StyledSupply = styled.div`
     margin-bottom: 60px;
+    .input_wrapper { 
+        position: relative;
+    }
     @media screen and (max-width: 768px) {
         margin-bottom: 32px;
     }
@@ -236,6 +288,7 @@ export const InputWrapper = styled.div<{ disabled?: boolean }>`
     }
 
     .input-wrapper {
+        position: relative;
         width: 340px;
         border: 1px solid #e9ecf2;
         border: ${({ disabled, theme }) =>

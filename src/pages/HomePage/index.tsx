@@ -39,6 +39,17 @@ import { useOnClickOutside } from '../../lib/useOnClickOutside'
 
 let data = [
     {
+        name: 'usdt',
+        img: '/images/earn/usdt_logo.svg',
+    },
+    {
+        name: 'usdc',
+        img: '/images/earn/usdc_logo.svg',
+    },
+]
+
+let secondData = [
+    {
         name: 'btc',
         img: '/images/home/bitcoin.svg',
     },
@@ -89,7 +100,7 @@ const Home = () => {
                 <div className="btc_wrapper">
                     <div className="btc" onClick={() => setSecondPopup(true)}>
                         <img
-                            src={data[itemId2].img}
+                            src={secondData[itemId2].img}
                             alt=""
                             className="currency"
                         />
@@ -109,7 +120,7 @@ const Home = () => {
                     </div>{' '}
                     {secondPopup && (
                         <SelectBodyHead ref={ref3}>
-                            {data.map((item, index) => (
+                            {secondData.map((item, index) => (
                                 <div
                                     className="select_card"
                                     onClick={() => {
@@ -457,7 +468,7 @@ const DataContentItem = styled.div`
     }
 `
 
-const SelectBody = styled.div`
+export const SelectBody = styled.div`
     position: absolute;
     left: 8px;
     top: 45px;
