@@ -5,6 +5,9 @@ const Title = styled.div`
     font-weight: 600;
     font-size: 24px;
     color: ${(props) => props.theme.selectColor};
+    @media screen and (max-width: 480px) {
+        padding: 0 16px;
+    }
 `
 
 const Pagination = styled.div`
