@@ -55,16 +55,6 @@ let secondData = [
         img: '/images/home/bitcoin.svg',
     },
     {
-        name: 'usdt',
-        ticker: 'usdt',
-        img: '/images/earn/usdt_logo.svg',
-    },
-    {
-        name: 'usdc',
-        ticker: 'usdc',
-        img: '/images/earn/usdc_logo.svg',
-    },
-    {
         name: 'Ethereum',
         ticker: 'ETH',
         img: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=023',
