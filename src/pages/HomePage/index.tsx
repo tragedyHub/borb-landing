@@ -50,16 +50,64 @@ let data = [
 
 let secondData = [
     {
-        name: 'btc',
+        name: 'Bitcoin',
+        ticker: 'btc',
         img: '/images/home/bitcoin.svg',
     },
     {
         name: 'usdt',
+        ticker: 'usdt',
         img: '/images/earn/usdt_logo.svg',
     },
     {
         name: 'usdc',
+        ticker: 'usdc',
         img: '/images/earn/usdc_logo.svg',
+    },
+    {
+        name: 'Ethereum',
+        ticker: 'ETH',
+        img: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=023',
+    },
+    {
+        name: 'Solana',
+        ticker: 'SOL',
+        img: 'https://bitbill.oss-accelerate.aliyuncs.com/pics/coins/solana-plain.svg',
+    },
+    {
+        name: 'BNB',
+        ticker: 'BNB',
+        img: 'https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=023',
+    },
+    {
+        name: 'Cardano',
+        ticker: 'ADA',
+        img: 'https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023',
+    },
+    {
+        name: 'Polkadot',
+        ticker: 'DOT',
+        img: 'https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=023',
+    },
+    {
+        name: 'Polygon',
+        ticker: 'MATIC',
+        img: 'https://cryptologos.cc/logos/polygon-matic-logo.svg?v=023',
+    },
+    {
+        name: 'Dogecoin',
+        ticker: 'DOGE',
+        img: 'https://cryptologos.cc/logos/dogecoin-doge-logo.svg?v=023',
+    },
+    {
+        name: 'Cosmos',
+        ticker: 'ATOM',
+        img: 'https://cryptologos.cc/logos/cosmos-atom-logo.svg?v=023',
+    },
+    {
+        name: 'Avalanche',
+        ticker: 'AVAX',
+        img: 'https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=023',
     },
 ]
 
@@ -104,7 +152,7 @@ const Home = () => {
                             alt=""
                             className="currency"
                         />
-                        <h4>{data[itemId2].name}</h4>
+                        <h4>{secondData[itemId2].ticker}</h4>
                         <svg
                             width="24"
                             height="24"
@@ -470,6 +518,7 @@ const DataContentItem = styled.div`
 
 export const SelectBody = styled.div`
     position: absolute;
+    z-index: 111;
     left: 8px;
     top: 45px;
     width: 150px;
@@ -482,6 +531,11 @@ export const SelectBody = styled.div`
         align-items: center;
         padding: 8px 16px;
         cursor: pointer;
+
+        img { 
+            width: 20px;
+            height: 20px;
+        }
 
         p {
             color: ${(props) => props.theme.arrowBackgroundColor};
@@ -500,9 +554,10 @@ export const SelectBody = styled.div`
 
 export const SelectBodyHead = styled.div`
     position: absolute;
+    z-index: 111;
     left: 0;
     top: 45px;
-    width: 150px;
+    width: auto;
     padding: 16px 0;
     background: ${(props) => props.theme.navbarBg};
     border-radius: 8px;
@@ -513,11 +568,18 @@ export const SelectBodyHead = styled.div`
         padding: 8px 16px;
         cursor: pointer;
 
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
         p {
             color: ${(props) => props.theme.arrowBackgroundColor};
             margin-left: 16px;
-            text-transform: uppercase;
             font-size: 16px;
+            &:first-letter { 
+                text-transform: uppercase;
+            }
         }
         &:hover {
             background: ${(props) => props.theme.selectColor};

@@ -6,16 +6,54 @@ import { useOnClickOutside } from '../lib/useOnClickOutside'
 import { SelectBodyHead } from '../pages/HomePage'
 let data = [
     {
-        name: 'btc',
+        name: 'Bitcoin',
+        ticker: 'btc',
         img: '/images/home/bitcoin.svg',
     },
     {
-        name: 'usdt',
-        img: '/images/earn/usdt_logo.svg',
+        name: 'Ethereum',
+        ticker: 'eth',
+        img: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=023',
     },
     {
-        name: 'usdc',
-        img: '/images/earn/usdc_logo.svg',
+        name: 'Solana',
+        ticker: 'sol',
+        img: 'https://bitbill.oss-accelerate.aliyuncs.com/pics/coins/solana-plain.svg',
+    },
+    {
+        name: 'BNB',
+        ticker: 'bnb',
+        img: 'https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=023',
+    },
+    {
+        name: 'Cardano',
+        ticker: 'ada',
+        img: 'https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023',
+    },
+    {
+        name: 'Polkadot',
+        ticker: 'dot',
+        img: 'https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=023',
+    },
+    {
+        name: 'Polygon',
+        ticker: 'matic',
+        img: 'https://cryptologos.cc/logos/polygon-matic-logo.svg?v=023',
+    },
+    {
+        name: 'Dogecoin',
+        ticker: 'doge',
+        img: 'https://cryptologos.cc/logos/dogecoin-doge-logo.svg?v=023',
+    },
+    {
+        name: 'Cosmos',
+        ticker: 'atom',
+        img: 'https://cryptologos.cc/logos/cosmos-atom-logo.svg?v=023',
+    },
+    {
+        name: 'Avalanche',
+        ticker: 'avax',
+        img: 'https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=023',
     },
 ]
 const Header = (props) => {
@@ -44,7 +82,7 @@ const Header = (props) => {
                             alt=""
                             className="currency"
                         />
-                        <h4>{data[itemId2].name}</h4>
+                        <h4>{data[itemId2].ticker}</h4>
                         <svg
                             width="24"
                             height="24"
@@ -210,9 +248,8 @@ const StyledHeader = styled.header`
             margin-right: 8px;
         }
         h4 {
-            text-transform: uppercase;
             font-weight: 600;
-            font-size: 36px;
+            font-size: 36px; text-transform: uppercase;
             color: ${(props) => props.theme.arrowBackgroundColor};
         }
         path {
