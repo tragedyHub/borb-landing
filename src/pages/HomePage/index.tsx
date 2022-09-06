@@ -125,23 +125,6 @@ const Home = () => {
     useOnClickOutside(ref2, () => setPopup(false))
     useOnClickOutside(ref3, () => setSecondPopup(false))
 
-    // const pythConnection = new PythConnection(
-    // solanaWeb3Connection,
-    // getPythProgramKeyForCluster(solanaClusterName)
-    // )
-    // pythConnection.onPriceChange((product, price) => {
-    // sample output:
-    // Crypto.SRM/USD: $8.68725 ±$0.0131 Status: Trading
-    //     console.log(
-    //         `${product.symbol}: $${price.price} \xB1$${
-    //             price.confidence
-    //         } Status: ${PriceStatus[price.status]}`
-    //     )
-    // })
-
-    // Start listening for price change events.
-    // pythConnection.start()
-
     return (
         <StyledHome>
             <div className="container">
@@ -184,7 +167,18 @@ const Home = () => {
                     )}
                 </div>
                 <Row>
-                    <Left></Left>
+                    <Left>
+                        <div className="left_row">
+                            <p className="cost">$24,372.83</p>
+                            <div className="times">
+                                <p className="time">1m</p>
+                                <p className="time">5m</p>
+                                <p className="time active">15m</p>
+                                <p className="time">1h</p>
+                                <p className="time">4h</p>
+                            </div>
+                        </div>
+                    </Left>
                     <Right>
                         <div className="content">
                             <Counter>86%</Counter>
@@ -525,14 +519,14 @@ export const SelectBody = styled.div`
     padding: 16px 0;
     background: ${(props) => props.theme.navbarBg};
     border-radius: 8px;
-    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
     .select_card {
         display: flex;
         align-items: center;
         padding: 8px 16px;
         cursor: pointer;
 
-        img { 
+        img {
             width: 20px;
             height: 20px;
         }
@@ -561,7 +555,7 @@ export const SelectBodyHead = styled.div`
     padding: 16px 0;
     background: ${(props) => props.theme.navbarBg};
     border-radius: 8px;
-    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
     .select_card {
         display: flex;
         align-items: center;
@@ -577,7 +571,7 @@ export const SelectBodyHead = styled.div`
             color: ${(props) => props.theme.arrowBackgroundColor};
             margin-left: 16px;
             font-size: 16px;
-            &:first-letter { 
+            &:first-letter {
                 text-transform: uppercase;
             }
         }

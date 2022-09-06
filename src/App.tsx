@@ -36,9 +36,11 @@ export const lightTheme = {
     walletBorder: '#E9ECF2',
     navbarHoverFill: '#23272B',
     navbarHover: '#F6F8FC',
+    black: '#23272B',
 }
 
 export const darkTheme = {
+    black: "#fff",
     backgroundContent: '#23272B',
     borderColor: '#3D424D',
     titleColor: '#F6F8FC',

@@ -72,7 +72,42 @@ const Row = styled.div`
     }
 `
 
-const Left = styled.div``
+const Left = styled.div`
+    .left_row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .times {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    p.cost {
+        font-size: 24px;
+        color: ${(props) => props.theme.selectColor};
+        font-weight: 600;
+    }
+    p.time {
+        cursor: pointer;
+        color: var(--grey60);
+        font-size: 14px;
+        font-weight: 400;
+    }
+    p.active {
+        color: var(--green);
+    }
+    @media screen and (max-width: 480px) {
+        padding: 0 16px; 
+        .left_row { 
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 24px;
+        }
+    }
+`
 
 const Right = styled.div`
     padding: 24px;
