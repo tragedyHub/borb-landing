@@ -297,7 +297,7 @@ const StyledNav = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
     overflow-y: scroll;
     padding-bottom: 24px;
     background: ${(props) => props.theme.navbarBg};
