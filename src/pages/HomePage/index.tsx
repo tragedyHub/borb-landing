@@ -310,7 +310,7 @@ const Home = () => {
                         <span className="last">Result</span>
                     </DataHeader>
                     <DataContent>
-                        {array.map((_, idx) => (
+                        {array.slice(0,10).map((_, idx) => (
                             <DataContentItem>
                                 <span className="center mobile-display-none">
                                     <img

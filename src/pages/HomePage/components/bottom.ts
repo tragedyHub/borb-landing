@@ -4,6 +4,7 @@ const Title = styled.div`
     margin: 48px 0 24px;
     font-weight: 600;
     font-size: 24px;
+    color: ${(props) => props.theme.selectColor};
 `
 
 const Pagination = styled.div`
