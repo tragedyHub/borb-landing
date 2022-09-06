@@ -134,7 +134,7 @@ const StyledPopup = styled.div`
     border-radius: 16px;
     position: absolute;
     z-index: 1;
-    background: ${(props) => props.theme.inputWrapperDisabledColor};
+    background: ${(props) => props.theme.backgroundContent};
     right: 50px;
     top: 80px;
     .title {
