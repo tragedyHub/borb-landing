@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 const StyledHome = styled.div`
     margin-bottom: 48px;
+    .input_wrapper,
+    .btc_wrapper {
+        position: relative;
+    }
     .container {
         display: flex;
         flex-direction: column;
@@ -18,6 +22,7 @@ const StyledHome = styled.div`
             margin-right: 8px;
         }
         h4 {
+            text-transform: uppercase;
             font-weight: 600;
             font-size: 36px;
             color: ${(props) => props.theme.arrowBackgroundColor};

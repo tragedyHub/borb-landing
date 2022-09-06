@@ -173,7 +173,11 @@ const Nav = (props) => {
                     </StyledLink>
                 </Block>
             </Top>
-            <Language>
+            <Language onClick={() => {
+                props.set(true)
+                props.setIsBurger(false)
+            }
+                }>
                 <img src="/images/primary/language.svg" alt="" />
                 <p>English</p>
                 <img src="/images/primary/arrow2.svg" alt="" />

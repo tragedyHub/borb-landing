@@ -37,12 +37,34 @@ import { useOnClickOutside } from '../../lib/useOnClickOutside'
 //     PythConnection,
 // } from '@pythnetwork/client'
 
+let data = [
+    {
+        name: 'btc',
+        img: '/images/home/bitcoin.svg',
+    },
+    {
+        name: 'usdt',
+        img: '/images/earn/usdt_logo.svg',
+    },
+    {
+        name: 'usdc',
+        img: '/images/earn/usdc_logo.svg',
+    },
+]
+
 const Home = () => {
     let array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     const [show, setShow] = React.useState<boolean>(false)
+    const [popup, setPopup] = React.useState<boolean>(false)
+    const [secondPopup, setSecondPopup] = React.useState<boolean>(false)
+    const [itemId, setItemId] = React.useState<any>(0)
+    const [itemId2, setItemId2] = React.useState<any>(0)
     let ref = React.useRef(null)
-
+    let ref2 = React.useRef(null)
+    let ref3 = React.useRef(null)
     useOnClickOutside(ref, () => setShow(false))
+    useOnClickOutside(ref2, () => setPopup(false))
+    useOnClickOutside(ref3, () => setSecondPopup(false))
 
     // const pythConnection = new PythConnection(
     // solanaWeb3Connection,
@@ -64,22 +86,43 @@ const Home = () => {
     return (
         <StyledHome>
             <div className="container">
-                <div className="btc">
-                    <img
-                        src="/images/home/bitcoin.svg"
-                        alt=""
-                        className="currency"
-                    />
-                    <h4>BTC</h4>
-                    <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M12 15L7.5 9L16.5 9L12 15Z" fill="#23272B" />
-                    </svg>
+                <div className="btc_wrapper">
+                    <div className="btc" onClick={() => setSecondPopup(true)}>
+                        <img
+                            src={data[itemId2].img}
+                            alt=""
+                            className="currency"
+                        />
+                        <h4>{data[itemId2].name}</h4>
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12 15L7.5 9L16.5 9L12 15Z"
+                                fill="#23272B"
+                            />
+                        </svg>
+                    </div>{' '}
+                    {secondPopup && (
+                        <SelectBodyHead ref={ref3}>
+                            {data.map((item, index) => (
+                                <div
+                                    className="select_card"
+                                    onClick={() => {
+                                        setItemId2(index)
+                                        setSecondPopup(false)
+                                    }}
+                                >
+                                    <img src={item.img} alt="" />
+                                    <p>{item.name}</p>
+                                </div>
+                            ))}
+                        </SelectBodyHead>
+                    )}
                 </div>
                 <Row>
                     <Left></Left>
@@ -88,11 +131,18 @@ const Home = () => {
                             <Counter>86%</Counter>
                             <InputWrapper>
                                 <div className="input-wrapper">
-                                    <SelectWrapper>
+                                    <SelectWrapper
+                                        onClick={() => {
+                                            setPopup(true)
+                                        }}
+                                    >
                                         <CurrencyWrapper>
-                                            <USDCIcon />
+                                            <img
+                                                src={data[itemId].img}
+                                                alt=""
+                                            />
                                         </CurrencyWrapper>
-                                        <span>USTC</span>
+                                        <span>{data[itemId].name}</span>
                                         <svg
                                             width="16"
                                             height="16"
@@ -107,6 +157,26 @@ const Home = () => {
                                             />
                                         </svg>
                                     </SelectWrapper>
+                                    {popup && (
+                                        <SelectBody ref={ref2}>
+                                            {data.map((item, index) => (
+                                                <div
+                                                    className="select_card"
+                                                    onClick={() => {
+                                                        setItemId(index)
+                                                        setPopup(false)
+                                                    }}
+                                                >
+                                                    <img
+                                                        src={item.img}
+                                                        alt=""
+                                                    />
+                                                    <p>{item.name}</p>
+                                                </div>
+                                            ))}
+                                        </SelectBody>
+                                    )}
+
                                     <input
                                         type="number"
                                         className="input"
@@ -383,6 +453,66 @@ const DataContentItem = styled.div`
 
         .mobile-display-none {
             display: none;
+        }
+    }
+`
+
+const SelectBody = styled.div`
+    position: absolute;
+    left: 8px;
+    top: 45px;
+    width: 150px;
+    padding: 16px 0;
+    background: ${(props) => props.theme.navbarBg};
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+    .select_card {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        cursor: pointer;
+
+        p {
+            color: ${(props) => props.theme.arrowBackgroundColor};
+            margin-left: 16px;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        &:hover {
+            background: ${(props) => props.theme.selectColor};
+            p {
+                color: ${(props) => props.theme.navbarBg};
+            }
+        }
+    }
+`
+
+export const SelectBodyHead = styled.div`
+    position: absolute;
+    left: 0;
+    top: 45px;
+    width: 150px;
+    padding: 16px 0;
+    background: ${(props) => props.theme.navbarBg};
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.4);
+    .select_card {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        cursor: pointer;
+
+        p {
+            color: ${(props) => props.theme.arrowBackgroundColor};
+            margin-left: 16px;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        &:hover {
+            background: ${(props) => props.theme.selectColor};
+            p {
+                color: ${(props) => props.theme.navbarBg};
+            }
         }
     }
 `

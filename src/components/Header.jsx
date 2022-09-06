@@ -2,9 +2,28 @@ import React from 'react'
 import { useLocation } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-
+import { useOnClickOutside } from '../lib/useOnClickOutside'
+import { SelectBodyHead } from '../pages/HomePage'
+let data = [
+    {
+        name: 'btc',
+        img: '/images/home/bitcoin.svg',
+    },
+    {
+        name: 'usdt',
+        img: '/images/earn/usdt_logo.svg',
+    },
+    {
+        name: 'usdc',
+        img: '/images/earn/usdc_logo.svg',
+    },
+]
 const Header = (props) => {
     const [trueLocation, setTrueLocation] = React.useState(false)
+    const [itemId2, setItemId2] = React.useState(0)
+    const [secondPopup, setSecondPopup] = React.useState(false)
+    let ref = React.useRef(null)
+    useOnClickOutside(ref, () => setSecondPopup(false))
     let location = useLocation()
 
     React.useEffect(() => {
@@ -18,22 +37,43 @@ const Header = (props) => {
     return (
         <StyledHeader location={trueLocation}>
             {trueLocation && (
-                <div className="btc">
-                    <img
-                        src="/images/home/bitcoin.svg"
-                        alt=""
-                        className="currency"
-                    />
-                    <h4>BTC</h4>
-                    <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M12 15L7.5 9L16.5 9L12 15Z" fill="#23272B" />
-                    </svg>
+                <div className="btc_wrapper">
+                    <div className="btc" onClick={() => setSecondPopup(true)}>
+                        <img
+                            src={data[itemId2].img}
+                            alt=""
+                            className="currency"
+                        />
+                        <h4>{data[itemId2].name}</h4>
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12 15L7.5 9L16.5 9L12 15Z"
+                                fill="#23272B"
+                            />
+                        </svg>
+                    </div>{' '}
+                    {secondPopup && (
+                        <SelectBodyHead ref={ref}>
+                            {data.map((item, index) => (
+                                <div
+                                    className="select_card"
+                                    onClick={() => {
+                                        setItemId2(index)
+                                        setSecondPopup(false)
+                                    }}
+                                >
+                                    <img src={item.img} alt="" />
+                                    <p>{item.name}</p>
+                                </div>
+                            ))}
+                        </SelectBodyHead>
+                    )}
                 </div>
             )}
 
@@ -103,6 +143,7 @@ const Header = (props) => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     className="adaptive"
+                    onClick={() => props.setLangaugePopup(true)}
                 >
                     <g clip-path="url(#clip0_184_577)">
                         <path
@@ -146,6 +187,7 @@ const Header = (props) => {
 export default Header
 
 const StyledHeader = styled.header`
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: ${(props) =>
@@ -168,6 +210,7 @@ const StyledHeader = styled.header`
             margin-right: 8px;
         }
         h4 {
+            text-transform: uppercase;
             font-weight: 600;
             font-size: 36px;
             color: ${(props) => props.theme.arrowBackgroundColor};
@@ -183,7 +226,7 @@ const StyledHeader = styled.header`
         justify-content: space-between;
         box-shadow: 0px 1px 0px ${(props) => props.theme.borderColor};
 
-        .btc {
+        .btc_wrapper {
             display: none;
         }
 

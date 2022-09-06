@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled, { ThemeProvider } from 'styled-components'
 import Footer from './components/Footer'
@@ -9,10 +9,10 @@ import EarnPage from './pages/EarnPage'
 import HomePage from './pages/HomePage'
 import { SupplyPage } from './pages/SupplyPage'
 import { useLocation } from 'react-router'
-import axios from 'axios'
 
 //@ts-ignore
 import isEqual from 'lodash.isequal'
+import LangaugePopup from './components/LanguagePopup'
 
 export const lightTheme = {
     backgroundContent: '#ffffff',
@@ -64,6 +64,8 @@ export const darkTheme = {
 
 const App = () => {
     const [isBurger, setIsBurger] = useState(false)
+    const [isLangaugePopup, setIsLangaugePopup] = useState(false)
+    let ref = useRef()
 
     const [appTheme, setAppTheme] = useState(
         localStorage.getItem('appTheme') === 'light' ? lightTheme : darkTheme
@@ -99,7 +101,11 @@ const App = () => {
     return (
         <ThemeProvider theme={appTheme}>
             <div className="App" id="app" ref={appRef}>
-                <Nav isBurger={isBurger} setIsBurger={setIsBurger} />
+                <Nav
+                    isBurger={isBurger}
+                    setIsBurger={setIsBurger}
+                    set={setIsLangaugePopup}
+                />
                 <MainContainer home={location.pathname === '/' ? true : false}>
                     <Header
                         theme={
@@ -109,7 +115,11 @@ const App = () => {
                         }
                         setIsBurger={setIsBurger}
                         changeTheme={changeTheme}
+                        setLangaugePopup={setIsLangaugePopup}
                     />
+                    {isLangaugePopup && (
+                        <LangaugePopup set={setIsLangaugePopup} ref={ref} />
+                    )}
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/supply" element={<SupplyPage />} />

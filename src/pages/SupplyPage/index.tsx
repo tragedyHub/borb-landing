@@ -229,6 +229,7 @@ const InputContainer = styled.div`
 `
 
 export const InputWrapper = styled.div<{ disabled?: boolean }>`
+    position: relative;
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -304,6 +305,7 @@ export const SelectWrapper = styled.div`
     span {
         font-family: 'Inter';
         font-weight: 400;
+        text-transform: uppercase;
         font-size: 14px;
         line-height: 140%;
         color: ${(props) => props.theme.selectColor};
