@@ -133,7 +133,7 @@ const StyledPopup = styled.div`
     box-shadow: 0 5px 20px rgb(0 0 0 / 25%);
     border-radius: 16px;
     position: absolute;
-    z-index: 1;
+    z-index: 11111;
     background: ${(props) => props.theme.backgroundContent};
     right: 50px;
     top: 80px;

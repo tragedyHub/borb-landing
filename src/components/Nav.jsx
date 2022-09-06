@@ -11,10 +11,12 @@ const Nav = (props) => {
     return (
         <StyledNav isBurger={props.isBurger} ref={ref}>
             <Top>
-                <Logo>
-                    <img src="/images/primary/Logo.png" alt="" />
-                    <p>BorB</p>
-                </Logo>
+                <NavLink to="/">
+                    <Logo>
+                        <img src="/images/primary/Logo.png" alt="" />
+                        <p>BorB</p>
+                    </Logo>
+                </NavLink>
                 <Block>
                     <Title>MANAGEMENTS</Title>
                     <NavLink to="/" className="colored">

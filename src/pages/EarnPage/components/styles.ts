@@ -20,6 +20,7 @@ const Title = styled.h4`
     font-weight: 600;
     font-size: 36px;
     line-height: 50px;
+    margin-bottom: 4px;
     color: ${(props) => props.theme.arrowBackgroundColor};
     @media screen and (max-width: 768px) {
         padding: 0 16px;

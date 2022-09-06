@@ -31,75 +31,13 @@ import {
 } from './components/main'
 import { Pagination, Title } from './components/bottom'
 import { useOnClickOutside } from '../../lib/useOnClickOutside'
+import { list, smallList } from '../../lib/data'
 // import {
 //     getPythProgramKeyForCluster,
 //     PriceStatus,
 //     PythConnection,
 // } from '@pythnetwork/client'
 
-let data = [
-    {
-        name: 'usdt',
-        img: '/images/earn/usdt_logo.svg',
-    },
-    {
-        name: 'usdc',
-        img: '/images/earn/usdc_logo.svg',
-    },
-]
-
-let secondData = [
-    {
-        name: 'Bitcoin',
-        ticker: 'btc',
-        img: '/images/home/bitcoin.svg',
-    },
-    {
-        name: 'Ethereum',
-        ticker: 'ETH',
-        img: 'https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=023',
-    },
-    {
-        name: 'Solana',
-        ticker: 'SOL',
-        img: 'https://bitbill.oss-accelerate.aliyuncs.com/pics/coins/solana-plain.svg',
-    },
-    {
-        name: 'BNB',
-        ticker: 'BNB',
-        img: 'https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=023',
-    },
-    {
-        name: 'Cardano',
-        ticker: 'ADA',
-        img: 'https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023',
-    },
-    {
-        name: 'Polkadot',
-        ticker: 'DOT',
-        img: 'https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=023',
-    },
-    {
-        name: 'Polygon',
-        ticker: 'MATIC',
-        img: 'https://cryptologos.cc/logos/polygon-matic-logo.svg?v=023',
-    },
-    {
-        name: 'Dogecoin',
-        ticker: 'DOGE',
-        img: 'https://cryptologos.cc/logos/dogecoin-doge-logo.svg?v=023',
-    },
-    {
-        name: 'Cosmos',
-        ticker: 'ATOM',
-        img: 'https://cryptologos.cc/logos/cosmos-atom-logo.svg?v=023',
-    },
-    {
-        name: 'Avalanche',
-        ticker: 'AVAX',
-        img: 'https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=023',
-    },
-]
 
 const Home = () => {
     let array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -121,11 +59,11 @@ const Home = () => {
                 <div className="btc_wrapper">
                     <div className="btc" onClick={() => setSecondPopup(true)}>
                         <img
-                            src={secondData[itemId2].img}
+                            src={list[itemId2].img}
                             alt=""
                             className="currency"
                         />
-                        <h4>{secondData[itemId2].ticker}</h4>
+                        <h4>{list[itemId2].ticker}</h4>
                         <svg
                             width="24"
                             height="24"
@@ -141,7 +79,7 @@ const Home = () => {
                     </div>{' '}
                     {secondPopup && (
                         <SelectBodyHead ref={ref3}>
-                            {secondData.map((item, index) => (
+                            {list.map((item, index) => (
                                 <div
                                     className="select_card"
                                     onClick={() => {
@@ -181,11 +119,11 @@ const Home = () => {
                                     >
                                         <CurrencyWrapper>
                                             <img
-                                                src={data[itemId].img}
+                                                src={smallList[itemId].img}
                                                 alt=""
                                             />
                                         </CurrencyWrapper>
-                                        <span>{data[itemId].name}</span>
+                                        <span>{smallList[itemId].name}</span>
                                         <svg
                                             width="16"
                                             height="16"
@@ -202,7 +140,7 @@ const Home = () => {
                                     </SelectWrapper>
                                     {popup && (
                                         <SelectBody ref={ref2}>
-                                            {data.map((item, index) => (
+                                            {smallList.map((item, index) => (
                                                 <div
                                                     className="select_card"
                                                     onClick={() => {
@@ -300,7 +238,7 @@ const Home = () => {
                         <span className="last">Result</span>
                     </DataHeader>
                     <DataContent>
-                        {array.slice(0,10).map((_, idx) => (
+                        {array.slice(0, 10).map((_, idx) => (
                             <DataContentItem>
                                 <span className="center mobile-display-none">
                                     <img

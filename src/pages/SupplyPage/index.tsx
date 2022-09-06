@@ -7,16 +7,8 @@ import { useMediaQuery } from '../../hooks/useMediaQuery'
 import { useRef, useState } from 'react'
 import { SelectBody } from '../HomePage'
 import { useOnClickOutside } from '../../lib/useOnClickOutside'
-let data = [
-    {
-        name: 'usdt',
-        img: '/images/earn/usdt_logo.svg',
-    },
-    {
-        name: 'usdc',
-        img: '/images/earn/usdc_logo.svg',
-    },
-]
+import { smallList } from '../../lib/data'
+
 const SupplyPage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)')
     const [popup, setPopup] = useState(false)
@@ -54,9 +46,9 @@ const SupplyPage = () => {
                                 }}
                             >
                                 <CurrencyWrapper>
-                                    <img src={data[itemId].img} alt="" />
+                                    <img src={smallList[itemId].img} alt="" />
                                 </CurrencyWrapper>
-                                <span>{data[itemId].name}</span>
+                                <span>{smallList[itemId].name}</span>
                                 <svg
                                     width="16"
                                     height="16"
@@ -73,7 +65,7 @@ const SupplyPage = () => {
                             </SelectWrapper>
                             {popup && (
                                 <SelectBody ref={reff}>
-                                    {data.map((item, index) => (
+                                    {smallList.map((item, index) => (
                                         <div
                                             className="select_card"
                                             onClick={() => {
@@ -159,7 +151,7 @@ const SupplyPage = () => {
 
 const StyledSupply = styled.div`
     margin-bottom: 60px;
-    .input_wrapper { 
+    .input_wrapper {
         position: relative;
     }
     @media screen and (max-width: 768px) {
