@@ -17,26 +17,31 @@ const Nav = (props) => {
                 </Logo>
                 <Block>
                     <Title>MANAGEMENTS</Title>
-
-                    <StyledLink stroke>
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M18.3337 10H15.0003L12.5003 17.5L7.50033 2.5L5.00033 10H1.66699"
-                                stroke="#8A8F99"
-                                stroke-width="1.4"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                        <p>Trade</p>
-                    </StyledLink>
-                    <NavLink to="/earn" onClick={() => props.isBurger(false)}>
+                    <NavLink to="/" className="colored">
+                        <StyledLink stroke>
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18.3337 10H15.0003L12.5003 17.5L7.50033 2.5L5.00033 10H1.66699"
+                                    stroke="#8A8F99"
+                                    stroke-width="1.4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            <p>Trade</p>
+                        </StyledLink>
+                    </NavLink>
+                    <NavLink
+                        className="need"
+                        to="/earn"
+                        onClick={() => props.isBurger(false)}
+                    >
                         <svg
                             width="20"
                             height="20"
@@ -54,7 +59,11 @@ const Nav = (props) => {
 
                         <p>Earn</p>
                     </NavLink>
-                    <NavLink to="/supply" onClick={() => props.isBurger(false)}>
+                    <NavLink
+                        className="need"
+                        to="/supply"
+                        onClick={() => props.isBurger(false)}
+                    >
                         <svg
                             width="20"
                             height="20"
@@ -76,6 +85,7 @@ const Nav = (props) => {
                 <Block>
                     <Title>Support</Title>
                     <NavLink
+                        className="need"
                         to="/messages"
                         onClick={() => props.isBurger(false)}
                     >
@@ -97,6 +107,7 @@ const Nav = (props) => {
                         <p>Messages</p>
                     </NavLink>
                     <NavLink
+                        className="need"
                         to="/settings"
                         onClick={() => props.isBurger(false)}
                     >
@@ -173,11 +184,12 @@ const Nav = (props) => {
                     </StyledLink>
                 </Block>
             </Top>
-            <Language onClick={() => {
-                props.set(true)
-                props.setIsBurger(false)
-            }
-                }>
+            <Language
+                onClick={() => {
+                    props.set(true)
+                    props.setIsBurger(false)
+                }}
+            >
                 <img src="/images/primary/language.svg" alt="" />
                 <p>English</p>
                 <img src="/images/primary/arrow2.svg" alt="" />
@@ -286,6 +298,7 @@ const StyledNav = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-y: scroll;
     padding-bottom: 24px;
     background: ${(props) => props.theme.navbarBg};
     box-shadow: 6px 0px 16px rgba(10, 31, 51, 0.05);
@@ -302,20 +315,27 @@ const StyledNav = styled.div`
             props.isBurger ? 'translateX(0)' : 'translateX(-240px)'};
     }
 
-    a {
+    a.colored {
+        &.active {
+            path {
+                stroke: var(--pink);
+                transition: 0.2s all ease;
+            }
+            p {
+                color: var(--pink);
+                font-weight: 600;
+                transition: 0.2s all ease;
+            }
+        }
+    }
+
+    a.need {
         cursor: pointer;
         height: 48px;
         display: flex;
         align-items: center;
         padding: 0 16px;
         margin: 0 9px;
-
-        p {
-            color: var(--grey60);
-            font-weight: 400;
-            font-size: 14px;
-            margin-left: 8px;
-        }
 
         &.active {
             path {
@@ -328,6 +348,13 @@ const StyledNav = styled.div`
                 font-weight: 600;
                 transition: 0.2s all ease;
             }
+        }
+
+        p {
+            color: var(--grey60);
+            font-weight: 400;
+            font-size: 14px;
+            margin-left: 8px;
         }
 
         &:hover {
