@@ -3,6 +3,23 @@ import styled from 'styled-components'
 const StyledEarn = styled.div`
     margin-bottom: 60px;
 
+    .titles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 24px;
+        margin-bottom: 24px;
+        p {
+            color: var(--grey60);
+            font-size: 12px;
+            &:nth-child(2) {
+                margin-left: 75px;
+            }
+            &:nth-child(3) {
+                margin-left: auto;
+            }
+        }
+    }
+
     .container {
         @media screen and (max-width: 768px) {
             padding: 0;
@@ -13,6 +30,11 @@ const StyledEarn = styled.div`
     }
     @media screen and (max-width: 768px) {
         margin-bottom: 32px;
+    }
+    @media screen and (max-width: 768px) {
+        .titles { 
+           display: none;
+        }
     }
 `
 

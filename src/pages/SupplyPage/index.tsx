@@ -95,7 +95,7 @@ const SupplyPage = () => {
                                 <CurrencyWrapper>
                                     <USDCIcon />
                                 </CurrencyWrapper>
-                                <span>USTC+</span>
+                                <span>USTC{itemId === 0 ? "+" : null}</span>
                             </SelectWrapper>
                             <input
                                 type="number"
@@ -109,7 +109,7 @@ const SupplyPage = () => {
                 {!isMobile && (
                     <SettingsTitle margin="24px">Balance: 263</SettingsTitle>
                 )}
-                <Btn>Supply USDC</Btn>
+                <Btn>Supply {smallList[itemId].name.toUpperCase()}</Btn>
                 <PurchaseWrapper>
                     <PurchaseDataList>
                         <PurchaseDataItem>
@@ -375,12 +375,16 @@ const Btn = styled.button`
     color: #238069;
     align-self: flex-start;
     margin-bottom: 24px;
-
+    transition: 0.2s all ease;
     @media screen and (max-width: 1000px) {
         margin-bottom: 32px;
     }
     @media screen and (max-width: 768px) {
         width: 100%;
+    }
+    &:hover,
+    &:active {
+        color: #fff;
     }
 `
 

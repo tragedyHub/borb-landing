@@ -82,7 +82,7 @@ const EarnPage = () => {
                                 </Row>
                                 <CardContentText>$4673</CardContentText>
                                 <CardSubLink>
-                                    <p>Copy</p>
+                                    <p>Claim</p>
                                     <img src="/images/earn/arrow.svg" alt="" />
                                 </CardSubLink>
                             </Card>
@@ -98,7 +98,7 @@ const EarnPage = () => {
                                 </Row>
                                 <CardContentText>$740</CardContentText>
                                 <CardSubLink>
-                                    <p>Copy</p>
+                                    <p>Claim</p>
                                     <img src="/images/earn/arrow.svg" alt="" />
                                 </CardSubLink>
                             </Card>
@@ -106,6 +106,11 @@ const EarnPage = () => {
                     </Swiper>
                 </div>
                 <RewardTitle>Reward</RewardTitle>
+                <div className="titles">
+                    <p>Wallet address</p>
+                    <p>Asset</p>
+                    <p>Reward earned</p>
+                </div>
                 <TableGrid>
                     <TableHead></TableHead>
                     <TableRow>
