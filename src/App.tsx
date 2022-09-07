@@ -40,7 +40,7 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-    black: "#fff",
+    black: '#fff',
     backgroundContent: '#23272B',
     borderColor: '#3D424D',
     titleColor: '#F6F8FC',
@@ -136,7 +136,7 @@ const App = () => {
 
 const MainContainer = styled.div`
     overflow: hidden;
-    padding: 0 90px;
+    padding: 0 70px;
     display: flex;
     flex-direction: column;
     height: 100%;
