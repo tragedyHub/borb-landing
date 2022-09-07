@@ -136,7 +136,7 @@ const App = () => {
 
 const MainContainer = styled.div`
     overflow: hidden;
-    padding: 0 80px;
+    padding: 0 50px;
     display: flex;
     flex-direction: column;
     height: 100%;
