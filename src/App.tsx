@@ -98,7 +98,6 @@ const App = () => {
             appTheme.backgroundContent === '#ffffff' ? 'light' : 'dark'
         )
     }, [appTheme])
-    let location = useLocation()
 
     return (
         <ThemeProvider theme={appTheme}>
@@ -108,7 +107,7 @@ const App = () => {
                     setIsBurger={setIsBurger}
                     set={setIsLangaugePopup}
                 />
-                <MainContainer home={location.pathname === '/' ? true : false}>
+                <MainContainer>
                     <Header
                         theme={
                             appTheme.backgroundContent === '#ffffff'
@@ -135,9 +134,9 @@ const App = () => {
     )
 }
 
-const MainContainer = styled.div<{ home?: boolean }>`
+const MainContainer = styled.div`
     overflow: hidden;
-    padding: ${(props: any) => (props.home ? '0 58px' : '0 90px')};
+    padding: 0 90px;
     display: flex;
     flex-direction: column;
     height: 100%;
