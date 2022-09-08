@@ -4,17 +4,23 @@ const StyledEarn = styled.div`
     margin-bottom: 60px;
 
     .titles {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-row-gap: 24px;
         margin-bottom: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
         p {
             color: var(--grey60);
             font-size: 12px;
+            &:nth-child(1) {
+                width: 252px;
+            }
             &:nth-child(2) {
-                margin-left: 75px;
+                width: 40px;
+                margin-left: 20.2%;
             }
             &:nth-child(3) {
+                width: 85px;
+                text-align: right;
                 margin-left: auto;
             }
         }
