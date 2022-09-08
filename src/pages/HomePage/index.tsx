@@ -7,8 +7,6 @@ import {
     Tab,
     TabContainer,
 } from '../SupplyPage'
-import { ReactComponent as USDCIcon } from '../../assets/usdc-icon.svg'
-import { ReactComponent as ArrowIcon } from '../../assets/arrow-down-icon.svg'
 import {
     Button,
     Buttons,
@@ -38,6 +36,58 @@ import { list, smallList } from '../../lib/data'
 //     PythConnection,
 // } from '@pythnetwork/client'
 
+let data = [
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '+266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '-266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '+266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '-266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '+266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '-266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '+266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '-266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '+266.454',
+    },
+    {
+        open: '$19,2587.45',
+        close: '00:47',
+        result: '-266.454',
+    },
+]
 
 const Home = () => {
     let array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -238,7 +288,7 @@ const Home = () => {
                         <span className="last">Result</span>
                     </DataHeader>
                     <DataContent>
-                        {array.slice(0, 10).map((_, idx) => (
+                        {data.slice(0, 10).map((_, idx) => (
                             <DataContentItem>
                                 <span className="center mobile-display-none">
                                     <img
@@ -263,7 +313,7 @@ const Home = () => {
                                 </span>
                                 <span className="center">$19,2587.45</span>
 
-                                <span className="center">00:47</span>
+                                <span className="center">{_.close}</span>
                                 <span className="chart_td center mobile-display-none">
                                     <img src="/images/home/Chart.png" alt="" />
                                 </span>
@@ -274,7 +324,7 @@ const Home = () => {
                                             : 'price-drop last'
                                     }
                                 >
-                                    +266.454
+                                    {_.result}
                                 </span>
                             </DataContentItem>
                         ))}
@@ -393,7 +443,7 @@ const DataContent = styled.div`
     margin-top: 24px;
     display: flex;
     flex-direction: column;
-    row-gap: 36px;
+    row-gap: 33px;
 
     span {
         font-family: 'Inter';
